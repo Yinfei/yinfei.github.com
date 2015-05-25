@@ -86,6 +86,9 @@
           </div>
         </div>
       </article>
+      {% if page.comments %}
+        {% include disqus.html %}
+      {% endif %}
     </main>
     <div class="bottom-closer">
       <div class="background-closer-image" {%if site.cover %} style="background-image: url({{ site.cover }})"{% endif %}>

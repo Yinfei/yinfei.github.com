@@ -720,7 +720,8 @@ body {
       padding: 0 18px; }
 
 #disqus_thread {
-  margin-top: 50px; }
+  margin-top: 50px;
+  margin-bottom: 50px; }
 
 .post-tag-articleimage {
   display: none; }

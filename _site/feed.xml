@@ -3,10 +3,10 @@
   <channel>
     <title>YinBlog</title>
     <description>Videogames • Web Development • Cats</description>
-    <link>http://myblog.***.***/</link>
-    <atom:link href="http://myblog.***.***/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 25 May 2015 11:12:38 +0200</pubDate>
-    <lastBuildDate>Mon, 25 May 2015 11:12:38 +0200</lastBuildDate>
+    <link>http://yinfei.github.io/</link>
+    <atom:link href="http://yinfei.github.io/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Mon, 25 May 2015 11:48:07 +0200</pubDate>
+    <lastBuildDate>Mon, 25 May 2015 11:48:07 +0200</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
@@ -116,8 +116,8 @@ Thanks to Spinel I&amp;#39;ve been able to share this story with you and I hope 
 And once again : take it easy, go one step at a time.&lt;/p&gt;
 </description>
         <pubDate>Sun, 30 Nov 2014 15:34:25 +0100</pubDate>
-        <link>http://myblog.***.***/dev/2014/11/30/from_scratch_to_ruby_and_ruby_on_rails.html</link>
-        <guid isPermaLink="true">http://myblog.***.***/dev/2014/11/30/from_scratch_to_ruby_and_ruby_on_rails.html</guid>
+        <link>http://yinfei.github.io/dev/2014/11/30/from_scratch_to_ruby_and_ruby_on_rails.html</link>
+        <guid isPermaLink="true">http://yinfei.github.io/dev/2014/11/30/from_scratch_to_ruby_and_ruby_on_rails.html</guid>
         
         <category>featured</category>
         
