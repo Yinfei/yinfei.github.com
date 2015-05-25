@@ -4,7 +4,7 @@ title:  "From scratch to Ruby and Ruby on Rails"
 date:   2014-11-30 14:34:25
 categories: dev
 tags: featured
-image: /assets/article_images/2015-05-25-from_scratch_to_ruby_and_ruby_on_rails/ruby.JPG
+image: /assets/article_images/2014-11-30-from_scratch_to_ruby_and_ruby_on_rails/ruby.JPG
 ---
 
 For my second year of programming with Ruby on Rails, I wanted to share with you my experience with this framework, from the first steps to where I am now.
