@@ -20,7 +20,7 @@ author_image: "/assets/images/businesscat.jpg"
 
 paginate:	5
 
-url: "http://yinfei.github.com" # the base hostname & protocol for your site
+url: "http://yinfei.github.io" # the base hostname & protocol for your site
 baseurl: ""
 
 # social icons and sharing options
