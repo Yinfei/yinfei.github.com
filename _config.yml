@@ -1,0 +1,54 @@
+# Build settings
+markdown: redcarpet
+highlighter: pygments
+gems:
+  - jemoji
+
+# Site settings
+title: "YinBlog"
+description: "Videogames • Web Development • Cats"
+
+email: a-mail@mail.mail
+#blog logo
+logo: "/assets/images/businesscat.jpg"
+# blog cover
+cover: "/assets/images/shibuya.jpg"
+
+name: 'Yohan Piron'
+author: 'Yohan Piron'
+author_image: "/assets/images/businesscat.jpg"
+
+paginate:	5
+
+url: "http://yinfei.github.com" # the base hostname & protocol for your site
+baseurl: ""
+
+# social icons and sharing options
+social:
+  - icon:	twitter
+    url:	https://twitter.com/yinfei
+    desc: Follow me on twitter
+    share_url: http://twitter.com/share
+    share_title: ?text=
+    share_link: "&amp;url="
+
+#  - icon:	facebook
+#    url:	https://facebook.com/???
+#    desc: Connect with me facebook
+#    share_url: https://www.facebook.com/sharer.php
+#    share_title: ?t=
+#    share_link: "&amp;u="
+
+  - icon:	github
+    url:	https://github.com/Yinfei
+    desc:	Fork me on github
+    share_url:
+    share_title:
+    share_link:
+
+#  - icon:	google-plus
+#    url:	https://google.com/???
+#    desc:	Add me on google+
+#    share_url:
+#    share_title:
+#    share_link:
