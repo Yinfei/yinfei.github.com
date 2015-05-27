@@ -3,15 +3,14 @@ layout: page
 title: About
 permalink: /about/
 ---
+Hi ! I'm Yohan, a 30 years old french Ruby developer.
 
-A medium inspired Jekyll blog theme. The basic idea came from the Ghost theme 
-[Readium 2.0](http://www.svenread.com/readium-ghost-theme/). I use mediator on my own blog [The Base](blog.base68.com).
+I currently work at the startup [Sush.io](http://sush.io) based in Paris. I also study a master degree in programming at ETNA.
 
-You can **download** the theme here:
-[https://github.com/dirkfabisch/mediator](https://github.com/dirkfabisch/mediator) 
+I'm passionnate about programming, entrepreneurship, music and video games.
 
-You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
+For 3 years, I use Ruby on Rails for most of my projects but I'm also a Sinatra enthusiast.
 
-You can find the source code for the Jekyll new theme at: [github.com/jglovier/jekyll-new](https://github.com/jglovier/jekyll-new)
+I recently started this blog about my experiences in the developer world. I hope you'll like it.
 
-You can find the source code for Jekyll at [github.com/jekyll/jekyll](https://github.com/jekyll/jekyll)
+This blog is powered by [Jekyll](https://github.com/jekyll/jekyll) and the awesome theme [Mediator](https://github.com/dirkfabisch/mediator).

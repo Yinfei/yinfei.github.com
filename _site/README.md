@@ -1,4 +1,4 @@
-Yinfei.github.com
+Yinfei.github.io
 ========
 
-My personal website, using Jekyll and the Mediator theme (available here: https://github.com/dirkfabisch/mediator)
+My personal blog, using Jekyll and the Mediator theme (available here: https://github.com/dirkfabisch/mediator)
