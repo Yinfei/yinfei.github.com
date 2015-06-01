@@ -5,9 +5,52 @@
     <description>Videogames • Web Development • Cats</description>
     <link>http://yinfei.github.io/</link>
     <atom:link href="http://yinfei.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 27 May 2015 15:01:49 +0200</pubDate>
-    <lastBuildDate>Wed, 27 May 2015 15:01:49 +0200</lastBuildDate>
+    <pubDate>Mon, 01 Jun 2015 15:53:53 +0200</pubDate>
+    <lastBuildDate>Mon, 01 Jun 2015 15:53:53 +0200</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>[Master Class Camp] - Première journée avec le Leap Motion</title>
+        <description>&lt;h1&gt;Jour 1 - Première approche&lt;/h1&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;Après un week-end de brainstorming et un passage au Co-Labs du 3è étage nous voici en possession du Saint Graal : *&lt;em&gt;un kit Leap Motion ! *&lt;/em&gt;
+&lt;br&gt;
+Le choix de cette technologie s&amp;#39;est articulé autour d&amp;#39;une envie commune de prendre de la distance vis à vis du web le temps d&amp;#39;un projet. Après avoir travaillé sur le projet &lt;em&gt;Space Invaders&lt;/em&gt; nous voulions retenter l&amp;#39;aventure du développement d&amp;#39;une application ludique, même si la majorité d&amp;#39;entre nous ne se destine pas a travailler dans le domaine du jeu-vidéo nous souhaitions tout de même saisir cette opportunité.&lt;/p&gt;
+
+&lt;p&gt;Nous avons donc décidé à l&amp;#39;unanimité de tester les différentes démos livrées avec le kit afin de commencer à creuser le concept de notre jeu.
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;img src=&quot;http://i.imgur.com/i7gWeIN.jpg?1&quot; alt=&quot;Premiers essais de bon matin&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;Voici le kit installé et la première démo lancée.
+Première remarque : la reconnaissance n&amp;#39;est pas très précise. Ne sachant pas si cela vient de la démo ou de l&amp;#39;appareil en lui-même nous essayons tous les mouvements possibles, du plus simple au plus complexe sur l&amp;#39;ensemble des applications disponibles.
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;img src=&quot;http://i.imgur.com/5eyoitu.jpg?1&quot; alt=&quot;Beckett teste la précision de la reconnaissance de mouvements.&quot;&gt;
+La seconde démo permet de mieux observer la reconnaissance des mouvements de la main et propose un quizz sur le corps humain. Les gestes semblent plus précis mais le format du jeu ne laisse que peu de place à l&amp;#39;improvisation, il ne s&amp;#39;agit que de désigner des points précis sur un organe, rien que vous ne pourriez faire sans une souris. Pour cet exemple, bien que le Leap Motion soit clairement dispensable, il permet un meilleur rendu et une meilleure reconnaissance que l&amp;#39;exemple précédent, ce qui est encourageant.
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;img src=&quot;http://i.imgur.com/Qm203RP.jpg?1&quot; alt=&quot;Kévin observe&quot;&gt;
+La dernière démo fût la plus complète. Possibilité de manipuler des objets soumis à une gravité, interaction avec des petits robots : le Leap Motion nous montre enfin son vrai potentiel et nous voici enthousiasmés.&lt;/p&gt;
+
+&lt;p&gt;Une fois les troupes motivées nous voici en pleine table ronde pour faire le bilan de nos réflexions du week end. &lt;em&gt;Simulateur d&amp;#39;instrument de musique&lt;/em&gt;, &lt;em&gt;contrôleur d&amp;#39;interface pour Mac OSX&lt;/em&gt;... l&amp;#39;idée retenue sera finalement la première : &lt;strong&gt;un jeu-vidéo&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Beckett présentera les bases de notre projet : &lt;em&gt;guider un objet amovible d&amp;#39;un point A à un point B&lt;/em&gt;. L&amp;#39;idée me rappelle un jeu de société de mon enfance et me permettra de compléter en suggérant un système d&amp;#39;obstacles et d&amp;#39;outils pour les contourner (ressorts, trampolines...).
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;img src=&quot;http://www.joueclub.fr/images/produits/B/0602/06020022.jpg&quot; alt=&quot;&amp;quot;Tricky Bille&amp;quot; ou la vulgarisation de notre concept.&quot;&gt;
+Pour parvenir à nos fins nous choisissons le très célèbre &lt;strong&gt;Unity3D&lt;/strong&gt; qui devrait nous permettre de livrer un &lt;em&gt;&amp;quot;Proof of Concept&amp;quot;&lt;/em&gt; dans les délais grâce à ses librairies d&amp;#39;objets et sa gestion de la physique. Notre appréhension se porte maintenant sur la courbe d&amp;#39;apprentissage et son impact sur l&amp;#39;état de notre jeu le jour de la démo pour la soutenance. Nous restons cependant déterminés !
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;img src=&quot;http://i.imgur.com/CQJTS50.jpg&quot; alt=&quot;Premiers pas sur Unity3D, l&amp;#39;aventure commence.&quot;&gt;&lt;/p&gt;
+</description>
+        <pubDate>Mon, 01 Jun 2015 17:46:58 +0200</pubDate>
+        <link>http://yinfei.github.io/dev/2015/06/01/premiers-pas.html</link>
+        <guid isPermaLink="true">http://yinfei.github.io/dev/2015/06/01/premiers-pas.html</guid>
+        
+        <category>featured</category>
+        
+        
+        <category>dev</category>
+        
+      </item>
     
       <item>
         <title>From scratch to Ruby and Ruby on Rails</title>
@@ -118,8 +161,6 @@ And once again : take it easy, go one step at a time.&lt;/p&gt;
         <pubDate>Sun, 30 Nov 2014 15:34:25 +0100</pubDate>
         <link>http://yinfei.github.io/dev/2014/11/30/from_scratch_to_ruby_and_ruby_on_rails.html</link>
         <guid isPermaLink="true">http://yinfei.github.io/dev/2014/11/30/from_scratch_to_ruby_and_ruby_on_rails.html</guid>
-        
-        <category>featured</category>
         
         
         <category>dev</category>

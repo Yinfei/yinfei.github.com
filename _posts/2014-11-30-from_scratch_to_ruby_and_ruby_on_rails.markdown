@@ -3,7 +3,6 @@ layout: post
 title:  "From scratch to Ruby and Ruby on Rails"
 date:   2014-11-30 14:34:25
 categories: dev
-tags: featured
 image: /assets/article_images/2014-11-30-from_scratch_to_ruby_and_ruby_on_rails/ruby.jpg
 comments: true
 ---
