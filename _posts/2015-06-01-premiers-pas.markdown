@@ -3,7 +3,6 @@ layout: post
 title:  "[Master Class Camp] - Première journée avec le Leap Motion"
 date:   2015-06-01 15:46:58
 categories: dev
-tags: featured
 image: /assets/article_images/2015-06-01-premiers-pas/banner.jpg
 comments: true
 ---
