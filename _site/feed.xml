@@ -5,9 +5,40 @@
     <description>Videogames • Web Development • Cats</description>
     <link>http://yinfei.github.io/</link>
     <atom:link href="http://yinfei.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 03 Jun 2015 10:32:07 +0200</pubDate>
-    <lastBuildDate>Wed, 03 Jun 2015 10:32:07 +0200</lastBuildDate>
+    <pubDate>Wed, 03 Jun 2015 13:58:24 +0200</pubDate>
+    <lastBuildDate>Wed, 03 Jun 2015 13:58:24 +0200</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>[Master Class Camp] - Premiers résultats</title>
+        <description>&lt;h1&gt;Jour 3 - Premiers résultats&lt;/h1&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;Nous parvenons enfin à incliner un plateau avec une boule dessus, ce qui influence le mouvement de cette dernière.
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;center&gt;&lt;a href=&quot;http://imgur.com/QHXq9T7&quot;&gt;&lt;img src=&quot;http://i.imgur.com/QHXq9T7.gif&quot; title=&quot;source: imgur.com&quot; style=&quot;max-width: 80%;&quot;/&gt;&lt;/a&gt;&lt;/center&gt;
+&lt;p&gt;&lt;center&gt;&lt;font color = &quot;grey&quot;&gt;&lt;i&gt;En mouvement.&lt;/i&gt;&lt;/font&gt;&lt;/center&gt;&lt;/p&gt;
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;Kévin de son côté à bien avancé sur le décor et commence à implémenter les pièges et obstacles.
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;center&gt;&lt;img src=&quot;http://i.imgur.com/3tCyqbw.jpg&quot; style=&quot;max-width: 80%;&quot;/&gt;&lt;/a&gt;&lt;/center&gt;
+&lt;p&gt;&lt;center&gt;&lt;font color = &quot;grey&quot;&gt;&lt;i&gt;Entre montagnes et palmiers.&lt;/i&gt;&lt;/font&gt;&lt;/center&gt;&lt;/p&gt;
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;La reconnaissance du Leap Motion reste encore récalcitrante mais nous avançons. Un fois que nous aurons mis en place un moyen stable et fiable nous pourrons l&amp;#39;intégrer au décor de Kévin.&lt;/p&gt;
+
+&lt;p&gt;En conclusion, de petites avancées mais l&amp;#39;ensemble reste motivant et prometteur !&lt;/p&gt;
+</description>
+        <pubDate>Wed, 03 Jun 2015 15:56:44 +0200</pubDate>
+        <link>http://yinfei.github.io/dev/2015/06/03/premiers-resultats.html</link>
+        <guid isPermaLink="true">http://yinfei.github.io/dev/2015/06/03/premiers-resultats.html</guid>
+        
+        
+        <category>dev</category>
+        
+      </item>
     
       <item>
         <title>[Master Class Camp] - Premiers essais et modélisation du décor</title>
