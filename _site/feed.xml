@@ -5,9 +5,40 @@
     <description>Videogames • Web Development • Cats</description>
     <link>http://yinfei.github.io/</link>
     <atom:link href="http://yinfei.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Mon, 01 Jun 2015 15:53:53 +0200</pubDate>
-    <lastBuildDate>Mon, 01 Jun 2015 15:53:53 +0200</lastBuildDate>
+    <pubDate>Wed, 03 Jun 2015 10:32:07 +0200</pubDate>
+    <lastBuildDate>Wed, 03 Jun 2015 10:32:07 +0200</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>[Master Class Camp] - Premiers essais et modélisation du décor</title>
+        <description>&lt;h1&gt;Jour 2 - Premiers essais et création du décor&lt;/h1&gt;
+
+&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+
+&lt;p&gt;Ce jour 2 est marqué par nos premiers essais sur Unity3D et le C#. Pendant que Kévin appréhende la modélisation de l&amp;#39;aire de jeu nous continuons nos essais sur des projets existants pour comprendre comment parvenir à incliner une surface plane.
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;img src=&quot;http://i.imgur.com/zgWfE1h.jpg&quot; alt=&quot;Kévin prépare le décor.&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;Une fois notre premier objectif atteint nous pourrons gérer la façon dont l&amp;#39;inclinaison va impacter la vitesse de rotation de la sphère.
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;img src=&quot;http://i.imgur.com/TD1DwWI.jpg&quot; alt=&quot;Vincent étudie des tutoriels vidéo.&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;La belle surprise du jour aura été le community manager de Leap Motion qui nous invite à le contacter par mail pour nos soucis de faiblesse de précision dans la reconnaissance du movement.
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;img src=&quot;http://i.imgur.com/u0EMuG4.png&quot; alt=&quot;Un CM réactif !&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;Nous continuons donc nos essais, nous maitrisons un peu mieux le Leap Motion mais il y a encore fort a faire pour pavenir à un Proof of Concept présentable.
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;img src=&quot;http://i.imgur.com/aR6zTpU.jpg&quot; alt=&quot;&amp;quot;Et si je bouge comme ça ?&amp;quot;&quot;&gt;&lt;/p&gt;
+</description>
+        <pubDate>Tue, 02 Jun 2015 17:46:58 +0200</pubDate>
+        <link>http://yinfei.github.io/dev/2015/06/02/premiers-essais.html</link>
+        <guid isPermaLink="true">http://yinfei.github.io/dev/2015/06/02/premiers-essais.html</guid>
+        
+        
+        <category>dev</category>
+        
+      </item>
     
       <item>
         <title>[Master Class Camp] - Première journée avec le Leap Motion</title>
@@ -44,8 +75,6 @@ Pour parvenir à nos fins nous choisissons le très célèbre &lt;strong&gt;Unit
         <pubDate>Mon, 01 Jun 2015 17:46:58 +0200</pubDate>
         <link>http://yinfei.github.io/dev/2015/06/01/premiers-pas.html</link>
         <guid isPermaLink="true">http://yinfei.github.io/dev/2015/06/01/premiers-pas.html</guid>
-        
-        <category>featured</category>
         
         
         <category>dev</category>
