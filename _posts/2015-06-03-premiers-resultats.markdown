@@ -7,7 +7,7 @@ image: /assets/article_images/2015-06-03-premiers-resultats/banner.jpg
 comments: true
 ---
 
-Jour 3 - Premiers résultats
+Jour 3 - Premiers résultats.
 ===
 <br><br>
 

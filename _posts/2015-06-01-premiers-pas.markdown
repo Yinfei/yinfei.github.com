@@ -7,11 +7,11 @@ image: /assets/article_images/2015-06-01-premiers-pas/banner.jpg
 comments: true
 ---
 
-Jour 1 - Première approche
+Jour 1 - Première approche.
 ===
 <br><br>
 
-Après un week-end de brainstorming et un passage au Co-Labs du 3è étage nous voici en possession du Saint Graal : **un kit Leap Motion ! **
+Après un week-end de brainstorming et un passage au Co-Labs du 3è étage nous voici en possession du Saint Graal : <b><i>un kit Leap Motion !</i></b>
 <br>
 Le choix de cette technologie s'est articulé autour d'une envie commune de prendre de la distance vis à vis du web le temps d'un projet. Après avoir travaillé sur le projet *Space Invaders* nous voulions retenter l'aventure du développement d'une application ludique, même si la majorité d'entre nous ne se destine pas a travailler dans le domaine du jeu-vidéo nous souhaitions tout de même saisir cette opportunité.
 

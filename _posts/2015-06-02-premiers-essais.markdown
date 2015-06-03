@@ -7,7 +7,7 @@ image: /assets/article_images/2015-06-02-premiers-essais/banner.jpg
 comments: true
 ---
 
-Jour 2 - Premiers essais et création du décor
+Jour 2 - Premiers essais et création du décor.
 ===
 <br><br>
 
