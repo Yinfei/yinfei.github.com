@@ -5,27 +5,47 @@
     <description>Videogames • Web Development • Cats</description>
     <link>http://yinfei.github.io/</link>
     <atom:link href="http://yinfei.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 04 Jun 2015 13:39:20 +0200</pubDate>
-    <lastBuildDate>Thu, 04 Jun 2015 13:39:20 +0200</lastBuildDate>
-    <generator>Jekyll v2.5.3</generator>
+    <pubDate>Tue, 01 Mar 2016 23:35:24 +0100</pubDate>
+    <lastBuildDate>Tue, 01 Mar 2016 23:35:24 +0100</lastBuildDate>
+    <generator>Jekyll v3.1.2</generator>
+    
+      <item>
+        <title>Rack and nothing else</title>
+        <description>&lt;h1 id=&quot;test&quot;&gt;Test&lt;/h1&gt;
+&lt;p&gt;Foo bar baz.&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Lol&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;foo&lt;/span&gt;
+    &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;lol&#39;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</description>
+        <pubDate>Tue, 01 Mar 2016 22:38:44 +0100</pubDate>
+        <link>http://yinfei.github.io/dev/2016/03/01/rack-and-nothing-else.html</link>
+        <guid isPermaLink="true">http://yinfei.github.io/dev/2016/03/01/rack-and-nothing-else.html</guid>
+        
+        
+        <category>dev</category>
+        
+      </item>
     
       <item>
         <title>[Master Class Camp] - Dernier jour</title>
-        <description>&lt;h1&gt;Jour 4 - Dernier jour.&lt;/h1&gt;
+        <description>&lt;h1 id=&quot;jour-4---dernier-jour&quot;&gt;Jour 4 - Dernier jour.&lt;/h1&gt;
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
-
-&lt;p&gt;Après quelques impondérables, tels que l&amp;#39;impossibilité d&amp;#39;exploiter la première carte conçue par Kevin, nous voici enfin avec un jeu jouable et 2 niveaux !&lt;/p&gt;
+&lt;p&gt;Après quelques impondérables, tels que l’impossibilité d’exploiter la première carte conçue par Kevin, nous voici enfin avec un jeu jouable et 2 niveaux !&lt;/p&gt;
 
 &lt;p&gt;Intégrer les nouveaux décors de Kevin a notre code aura été une tâche complexe mais voir le tout fonctionner ensemble est une belle récompense.
-&lt;br&gt;&lt;br&gt;&lt;br&gt;
-&lt;center&gt;&lt;img src=&quot;http://i.imgur.com/umxgqIK.jpg&quot; style=&quot;max-width: 80%;&quot;/&gt;&lt;/center&gt;
-&lt;p&gt;&lt;center&gt;&lt;font color = &quot;grey&quot;&gt;&lt;i&gt;It&amp;#39;s alive !&lt;/i&gt;&lt;/font&gt;&lt;/center&gt;&lt;/p&gt;
-&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;center&gt;&lt;img src=&quot;http://i.imgur.com/umxgqIK.jpg&quot; style=&quot;max-width: 80%;&quot; /&gt;&lt;/center&gt;
+&lt;p&gt;&lt;center&gt;&lt;font color=&quot;grey&quot;&gt;&lt;i&gt;It&#39;s alive !&lt;/i&gt;&lt;/font&gt;&lt;/center&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;Il ne nous reste qu&amp;#39;a intégrer un écran de victoire correct et notre Proof of Concept sera présentable demain.&lt;/p&gt;
+&lt;p&gt;Il ne nous reste qu’a intégrer un écran de victoire correct et notre Proof of Concept sera présentable demain.&lt;/p&gt;
 
-&lt;p&gt;Cette expérience fût très enrichissante et appréhender un device tel que le Leap Motion ne fût pas une mince affaire. L&amp;#39;expérience Unity3D à été très intéressante bien qu&amp;#39;un peu frustrante, on passe beaucoup de temps à configurer qu&amp;#39;a coder dans un projet tel que celui-ci hélas.&lt;/p&gt;
+&lt;p&gt;Cette expérience fût très enrichissante et appréhender un device tel que le Leap Motion ne fût pas une mince affaire. L’expérience Unity3D à été très intéressante bien qu’un peu frustrante, on passe beaucoup de temps à configurer qu’a coder dans un projet tel que celui-ci hélas.&lt;/p&gt;
 </description>
         <pubDate>Thu, 04 Jun 2015 15:38:56 +0200</pubDate>
         <link>http://yinfei.github.io/dev/2015/06/04/dernier-jour.html</link>
@@ -38,25 +58,24 @@
     
       <item>
         <title>[Master Class Camp] - Premiers résultats</title>
-        <description>&lt;h1&gt;Jour 3 - Premiers résultats.&lt;/h1&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+        <description>&lt;h1 id=&quot;jour-3---premiers-rsultats&quot;&gt;Jour 3 - Premiers résultats.&lt;/h1&gt;
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;p&gt;Nous parvenons enfin à incliner un plateau avec une boule dessus, ce qui influence le mouvement de cette dernière.
-&lt;br&gt;&lt;br&gt;&lt;br&gt;
-&lt;center&gt;&lt;a href=&quot;http://imgur.com/QHXq9T7&quot;&gt;&lt;img src=&quot;http://i.imgur.com/QHXq9T7.gif&quot; title=&quot;source: imgur.com&quot; style=&quot;max-width: 80%;&quot;/&gt;&lt;/a&gt;&lt;/center&gt;
-&lt;p&gt;&lt;center&gt;&lt;font color = &quot;grey&quot;&gt;&lt;i&gt;En mouvement.&lt;/i&gt;&lt;/font&gt;&lt;/center&gt;&lt;/p&gt;
-&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;center&gt;&lt;a href=&quot;http://imgur.com/QHXq9T7&quot;&gt;&lt;img src=&quot;http://i.imgur.com/QHXq9T7.gif&quot; title=&quot;source: imgur.com&quot; style=&quot;max-width: 80%;&quot; /&gt;&lt;/a&gt;&lt;/center&gt;
+&lt;p&gt;&lt;center&gt;&lt;font color=&quot;grey&quot;&gt;&lt;i&gt;En mouvement.&lt;/i&gt;&lt;/font&gt;&lt;/center&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;p&gt;Kévin de son côté à bien avancé sur le décor et commence à implémenter les pièges et obstacles.
-&lt;br&gt;&lt;br&gt;&lt;br&gt;
-&lt;center&gt;&lt;img src=&quot;http://i.imgur.com/3tCyqbw.jpg&quot; style=&quot;max-width: 80%;&quot;/&gt;&lt;/a&gt;&lt;/center&gt;
-&lt;p&gt;&lt;center&gt;&lt;font color = &quot;grey&quot;&gt;&lt;i&gt;Entre montagnes et palmiers.&lt;/i&gt;&lt;/font&gt;&lt;/center&gt;&lt;/p&gt;
-&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;center&gt;&lt;img src=&quot;http://i.imgur.com/3tCyqbw.jpg&quot; style=&quot;max-width: 80%;&quot; /&gt;&lt;/center&gt;
+&lt;p&gt;&lt;center&gt;&lt;font color=&quot;grey&quot;&gt;&lt;i&gt;Entre montagnes et palmiers.&lt;/i&gt;&lt;/font&gt;&lt;/center&gt;&lt;/p&gt;
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;La reconnaissance du Leap Motion reste encore récalcitrante mais nous avançons. Un fois que nous aurons mis en place un moyen stable et fiable nous pourrons l&amp;#39;intégrer au décor de Kévin.&lt;/p&gt;
+&lt;p&gt;La reconnaissance du Leap Motion reste encore récalcitrante mais nous avançons. Un fois que nous aurons mis en place un moyen stable et fiable nous pourrons l’intégrer au décor de Kévin.&lt;/p&gt;
 
-&lt;p&gt;En conclusion, de petites avancées mais l&amp;#39;ensemble reste motivant et prometteur !&lt;/p&gt;
+&lt;p&gt;En conclusion, de petites avancées mais l’ensemble reste motivant et prometteur !&lt;/p&gt;
 </description>
         <pubDate>Wed, 03 Jun 2015 15:56:44 +0200</pubDate>
         <link>http://yinfei.github.io/dev/2015/06/03/premiers-resultats.html</link>
@@ -69,25 +88,24 @@
     
       <item>
         <title>[Master Class Camp] - Premiers essais et modélisation du décor</title>
-        <description>&lt;h1&gt;Jour 2 - Premiers essais et création du décor.&lt;/h1&gt;
+        <description>&lt;h1 id=&quot;jour-2---premiers-essais-et-cration-du-dcor&quot;&gt;Jour 2 - Premiers essais et création du décor.&lt;/h1&gt;
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;Ce jour 2 est marqué par nos premiers essais sur Unity3D et le C#. Pendant que Kévin appréhende la modélisation de l’aire de jeu nous continuons nos essais sur des projets existants pour comprendre comment parvenir à incliner une surface plane.
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;
+&lt;img src=&quot;http://i.imgur.com/zgWfE1h.jpg&quot; alt=&quot;Kévin prépare le décor.&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Ce jour 2 est marqué par nos premiers essais sur Unity3D et le C#. Pendant que Kévin appréhende la modélisation de l&amp;#39;aire de jeu nous continuons nos essais sur des projets existants pour comprendre comment parvenir à incliner une surface plane.
-&lt;br&gt;&lt;br&gt;&lt;br&gt;
-&lt;img src=&quot;http://i.imgur.com/zgWfE1h.jpg&quot; alt=&quot;Kévin prépare le décor.&quot;&gt;&lt;/p&gt;
-
-&lt;p&gt;Une fois notre premier objectif atteint nous pourrons gérer la façon dont l&amp;#39;inclinaison va impacter la vitesse de rotation de la sphère.
-&lt;br&gt;&lt;br&gt;&lt;br&gt;
-&lt;img src=&quot;http://i.imgur.com/TD1DwWI.jpg&quot; alt=&quot;Vincent étudie des tutoriels vidéo.&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Une fois notre premier objectif atteint nous pourrons gérer la façon dont l’inclinaison va impacter la vitesse de rotation de la sphère.
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;
+&lt;img src=&quot;http://i.imgur.com/TD1DwWI.jpg&quot; alt=&quot;Vincent étudie des tutoriels vidéo.&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;La belle surprise du jour aura été le community manager de Leap Motion qui nous invite à le contacter par mail pour nos soucis de faiblesse de précision dans la reconnaissance du movement.
-&lt;br&gt;&lt;br&gt;&lt;br&gt;
-&lt;img src=&quot;http://i.imgur.com/u0EMuG4.png&quot; alt=&quot;Un CM réactif !&quot;&gt;&lt;/p&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;
+&lt;img src=&quot;http://i.imgur.com/u0EMuG4.png&quot; alt=&quot;Un CM réactif !&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Nous continuons donc nos essais, nous maitrisons un peu mieux le Leap Motion mais il y a encore fort a faire pour pavenir à un Proof of Concept présentable.
-&lt;br&gt;&lt;br&gt;&lt;br&gt;
-&lt;img src=&quot;http://i.imgur.com/aR6zTpU.jpg&quot; alt=&quot;&amp;quot;Et si je bouge comme ça ?&amp;quot;&quot;&gt;&lt;/p&gt;
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;
+&lt;img src=&quot;http://i.imgur.com/aR6zTpU.jpg&quot; alt=&quot;&amp;quot;Et si je bouge comme ça ?&amp;quot;&quot; /&gt;&lt;/p&gt;
 </description>
         <pubDate>Tue, 02 Jun 2015 17:46:58 +0200</pubDate>
         <link>http://yinfei.github.io/dev/2015/06/02/premiers-essais.html</link>
@@ -100,35 +118,34 @@
     
       <item>
         <title>[Master Class Camp] - Première journée avec le Leap Motion</title>
-        <description>&lt;h1&gt;Jour 1 - Première approche.&lt;/h1&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
+        <description>&lt;h1 id=&quot;jour-1---premire-approche&quot;&gt;Jour 1 - Première approche.&lt;/h1&gt;
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;p&gt;Après un week-end de brainstorming et un passage au Co-Labs du 3è étage nous voici en possession du Saint Graal : &lt;b&gt;&lt;i&gt;un kit Leap Motion !&lt;/i&gt;&lt;/b&gt;
-&lt;br&gt;
-Le choix de cette technologie s&amp;#39;est articulé autour d&amp;#39;une envie commune de prendre de la distance vis à vis du web le temps d&amp;#39;un projet. Après avoir travaillé sur le projet &lt;em&gt;Space Invaders&lt;/em&gt; nous voulions retenter l&amp;#39;aventure du développement d&amp;#39;une application ludique, même si la majorité d&amp;#39;entre nous ne se destine pas a travailler dans le domaine du jeu-vidéo nous souhaitions tout de même saisir cette opportunité.&lt;/p&gt;
+&lt;br /&gt;
+Le choix de cette technologie s’est articulé autour d’une envie commune de prendre de la distance vis à vis du web le temps d’un projet. Après avoir travaillé sur le projet &lt;em&gt;Space Invaders&lt;/em&gt; nous voulions retenter l’aventure du développement d’une application ludique, même si la majorité d’entre nous ne se destine pas a travailler dans le domaine du jeu-vidéo nous souhaitions tout de même saisir cette opportunité.&lt;/p&gt;
 
-&lt;p&gt;Nous avons donc décidé à l&amp;#39;unanimité de tester les différentes démos livrées avec le kit afin de commencer à creuser le concept de notre jeu.
-&lt;br&gt;&lt;br&gt;&lt;br&gt;
-&lt;img src=&quot;http://i.imgur.com/i7gWeIN.jpg?1&quot; alt=&quot;Premiers essais de bon matin&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Nous avons donc décidé à l’unanimité de tester les différentes démos livrées avec le kit afin de commencer à creuser le concept de notre jeu.
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;
+&lt;img src=&quot;http://i.imgur.com/i7gWeIN.jpg?1&quot; alt=&quot;Premiers essais de bon matin&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Voici le kit installé et la première démo lancée.
-Première remarque : la reconnaissance n&amp;#39;est pas très précise. Ne sachant pas si cela vient de la démo ou de l&amp;#39;appareil en lui-même nous essayons tous les mouvements possibles, du plus simple au plus complexe sur l&amp;#39;ensemble des applications disponibles.
-&lt;br&gt;&lt;br&gt;&lt;br&gt;
-&lt;img src=&quot;http://i.imgur.com/5eyoitu.jpg?1&quot; alt=&quot;Beckett teste la précision de la reconnaissance de mouvements.&quot;&gt;
-La seconde démo permet de mieux observer la reconnaissance des mouvements de la main et propose un quizz sur le corps humain. Les gestes semblent plus précis mais le format du jeu ne laisse que peu de place à l&amp;#39;improvisation, il ne s&amp;#39;agit que de désigner des points précis sur un organe, rien que vous ne pourriez faire sans une souris. Pour cet exemple, bien que le Leap Motion soit clairement dispensable, il permet un meilleur rendu et une meilleure reconnaissance que l&amp;#39;exemple précédent, ce qui est encourageant.
-&lt;br&gt;&lt;br&gt;&lt;br&gt;
-&lt;img src=&quot;http://i.imgur.com/Qm203RP.jpg?1&quot; alt=&quot;Kévin observe&quot;&gt;
+Première remarque : la reconnaissance n’est pas très précise. Ne sachant pas si cela vient de la démo ou de l’appareil en lui-même nous essayons tous les mouvements possibles, du plus simple au plus complexe sur l’ensemble des applications disponibles.
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;
+&lt;img src=&quot;http://i.imgur.com/5eyoitu.jpg?1&quot; alt=&quot;Beckett teste la précision de la reconnaissance de mouvements.&quot; /&gt;
+La seconde démo permet de mieux observer la reconnaissance des mouvements de la main et propose un quizz sur le corps humain. Les gestes semblent plus précis mais le format du jeu ne laisse que peu de place à l’improvisation, il ne s’agit que de désigner des points précis sur un organe, rien que vous ne pourriez faire sans une souris. Pour cet exemple, bien que le Leap Motion soit clairement dispensable, il permet un meilleur rendu et une meilleure reconnaissance que l’exemple précédent, ce qui est encourageant.
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;
+&lt;img src=&quot;http://i.imgur.com/Qm203RP.jpg?1&quot; alt=&quot;Kévin observe&quot; /&gt;
 La dernière démo fût la plus complète. Possibilité de manipuler des objets soumis à une gravité, interaction avec des petits robots : le Leap Motion nous montre enfin son vrai potentiel et nous voici enthousiasmés.&lt;/p&gt;
 
-&lt;p&gt;Une fois les troupes motivées nous voici en pleine table ronde pour faire le bilan de nos réflexions du week end. &lt;em&gt;Simulateur d&amp;#39;instrument de musique&lt;/em&gt;, &lt;em&gt;contrôleur d&amp;#39;interface pour Mac OSX&lt;/em&gt;... l&amp;#39;idée retenue sera finalement la première : &lt;strong&gt;un jeu-vidéo&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Une fois les troupes motivées nous voici en pleine table ronde pour faire le bilan de nos réflexions du week end. &lt;em&gt;Simulateur d’instrument de musique&lt;/em&gt;, &lt;em&gt;contrôleur d’interface pour Mac OSX&lt;/em&gt;… l’idée retenue sera finalement la première : &lt;strong&gt;un jeu-vidéo&lt;/strong&gt;.&lt;/p&gt;
 
-&lt;p&gt;Beckett présentera les bases de notre projet : &lt;em&gt;guider un objet amovible d&amp;#39;un point A à un point B&lt;/em&gt;. L&amp;#39;idée me rappelle un jeu de société de mon enfance et me permettra de compléter en suggérant un système d&amp;#39;obstacles et d&amp;#39;outils pour les contourner (ressorts, trampolines...).
-&lt;br&gt;&lt;br&gt;&lt;br&gt;
-&lt;img src=&quot;http://www.joueclub.fr/images/produits/B/0602/06020022.jpg&quot; alt=&quot;&amp;quot;Tricky Bille&amp;quot; ou la vulgarisation de notre concept.&quot;&gt;
-Pour parvenir à nos fins nous choisissons le très célèbre &lt;strong&gt;Unity3D&lt;/strong&gt; qui devrait nous permettre de livrer un &lt;em&gt;&amp;quot;Proof of Concept&amp;quot;&lt;/em&gt; dans les délais grâce à ses librairies d&amp;#39;objets et sa gestion de la physique. Notre appréhension se porte maintenant sur la courbe d&amp;#39;apprentissage et son impact sur l&amp;#39;état de notre jeu le jour de la démo pour la soutenance. Nous restons cependant déterminés !
-&lt;br&gt;&lt;br&gt;&lt;br&gt;
-&lt;img src=&quot;http://i.imgur.com/CQJTS50.jpg&quot; alt=&quot;Premiers pas sur Unity3D, l&amp;#39;aventure commence.&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Beckett présentera les bases de notre projet : &lt;em&gt;guider un objet amovible d’un point A à un point B&lt;/em&gt;. L’idée me rappelle un jeu de société de mon enfance et me permettra de compléter en suggérant un système d’obstacles et d’outils pour les contourner (ressorts, trampolines…).
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;
+&lt;img src=&quot;http://www.joueclub.fr/images/produits/B/0602/06020022.jpg&quot; alt=&quot;&amp;quot;Tricky Bille&amp;quot; ou la vulgarisation de notre concept.&quot; /&gt;
+Pour parvenir à nos fins nous choisissons le très célèbre &lt;strong&gt;Unity3D&lt;/strong&gt; qui devrait nous permettre de livrer un &lt;em&gt;“Proof of Concept”&lt;/em&gt; dans les délais grâce à ses librairies d’objets et sa gestion de la physique. Notre appréhension se porte maintenant sur la courbe d’apprentissage et son impact sur l’état de notre jeu le jour de la démo pour la soutenance. Nous restons cependant déterminés !
+&lt;br /&gt;&lt;br /&gt;&lt;br /&gt;
+&lt;img src=&quot;http://i.imgur.com/CQJTS50.jpg&quot; alt=&quot;Premiers pas sur Unity3D, l&#39;aventure commence.&quot; /&gt;&lt;/p&gt;
 </description>
         <pubDate>Mon, 01 Jun 2015 17:46:58 +0200</pubDate>
         <link>http://yinfei.github.io/dev/2015/06/01/premiers-pas.html</link>
@@ -143,12 +160,11 @@ Pour parvenir à nos fins nous choisissons le très célèbre &lt;strong&gt;Unit
         <title>From scratch to Ruby and Ruby on Rails</title>
         <description>&lt;p&gt;For my second year of programming with Ruby on Rails, I wanted to share with you my experience with this framework, from the first steps to where I am now.&lt;/p&gt;
 
-&lt;hr&gt;
+&lt;hr /&gt;
 
-&lt;h3&gt;Heading in a new direction&lt;/h3&gt;
-
-&lt;p&gt;&lt;br&gt;
-Two years ago, after five years spent in the communication and PR business, I started taking coding lessons form a school in france named AFPA. After all this time spent in the classical music media, I became aware of the fact that my career didn&amp;#39;t turn out the way I wanted it to, so I decided to set out towards a new world : &lt;strong&gt;programming&lt;/strong&gt;.&lt;/p&gt;
+&lt;h1 id=&quot;heading-in-a-new-direction&quot;&gt;Heading in a new direction&lt;/h1&gt;
+&lt;p&gt;&lt;br /&gt;
+Two years ago, after five years spent in the communication and PR business, I started taking coding lessons form a school in france named AFPA. After all this time spent in the classical music media, I became aware of the fact that my career didn’t turn out the way I wanted it to, so I decided to set out towards a new world : &lt;strong&gt;programming&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;p&gt;I used to think that this would be impossible, considering my lack of scientifically skills, but time proved me wrong.&lt;/p&gt;
 
@@ -156,93 +172,89 @@ Two years ago, after five years spent in the communication and PR business, I st
 
 &lt;p&gt;As you can see, I started with little to no skill : I knew HTML and CSS, nothing more. AFPA taught me the basics of programming, from C# scripts to advanced PHP projects, in witch I had to create a shop-like website for selling books from scratch.&lt;/p&gt;
 
-&lt;p&gt;Those are good examples of what you can do to grab some programming skill, ask yourself what kind of tools you need or which things you&amp;#39;d like to copy and try to make it ! It&amp;#39;ll help you to understand how things works.
+&lt;p&gt;Those are good examples of what you can do to grab some programming skill, ask yourself what kind of tools you need or which things you’d like to copy and try to make it ! It’ll help you to understand how things works.
 As for myself, hard work, research and guided exercices helped me through this long trial and error process, destined to understand and better my knowledge about the best practices, and pushing my results above those of my classmates. The basis of this motivation was not founded on a misplaced pride, but on the feeling that I was headed in the right direction this time.&lt;/p&gt;
 
-&lt;p&gt;Going from writing a fed algorithms on paper to elaborating those projects is what got me seriously motivated to push further and start my own projects, even if i didn&amp;#39;t know where to start or which tools best suited them. I recommend you to benchmark the tools you might use : languages, development environments... because the most suited for you they are, the more productive you&amp;#39;ll be.&lt;/p&gt;
+&lt;p&gt;Going from writing a fed algorithms on paper to elaborating those projects is what got me seriously motivated to push further and start my own projects, even if i didn’t know where to start or which tools best suited them. I recommend you to benchmark the tools you might use : languages, development environments… because the most suited for you they are, the more productive you’ll be.&lt;/p&gt;
 
-&lt;hr&gt;
+&lt;hr /&gt;
 
-&lt;h3&gt;The Bootstrap sorcery&lt;/h3&gt;
-
-&lt;p&gt;&lt;br&gt;
-&lt;center&gt;&lt;img alt=&quot;&quot; src=&quot;https://s3.amazonaws.com/f.cl.ly/items/0E3y0P3W3t2I401v2f2J/bootstrap.png&quot; style=&quot;height:210px&quot;&gt;&lt;/center&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;&lt;em&gt;Have you heard of this &amp;#39;Bootstrap&amp;#39; thing ? It looks awesome !&lt;/em&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;That&amp;#39;s the newbie I was, one year ago, approaching strange things called &amp;quot;frameworks&amp;quot;.&lt;/p&gt;
-
-&lt;p&gt;Even if frameworks look georgeous &lt;small class=&quot;text-grey&quot;&gt;&lt;em&gt;(most of the time)&lt;/em&gt;&lt;/small&gt;, you should take your time and try to do things by yourself. Because those things bring this magic to you, they do all the complicated stuff in the background while you get the benfits from it. The main issue is that you miss how things really work and you get to the next step of developement complexity completely unprepared. Of course you don&amp;#39;t have to reinvent the wheel every time you need a car, but try to do it at least one time so that you have the big picture of what&amp;#39;s going on.&lt;/p&gt;
-
-&lt;p&gt;So there I was, with a handful of small projects made out of procedural PHP in my bag, no knowledge of how to structure my work and not a single idea of how a framework works. First I learnt the &lt;a href=&quot;http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller&quot; target=&quot;_blank&quot;&gt;Model View Controller&lt;/a&gt; pattern, which you should keep a close eye on. Most of the web based framworks use this way to do stuff and it&amp;#39;s pretty cool.&lt;/p&gt;
-
-&lt;p&gt;&lt;center&gt;&lt;img alt=&quot;&quot; src=&quot;https://s3.amazonaws.com/f.cl.ly/items/0L0t3y023n3h1h1x0D19/symfony.png&quot; style=&quot;height:210px&quot;&gt;&lt;/center&gt;&lt;/p&gt;
-
-&lt;p&gt;Only knowing PHP and C#, my first two targets at the time were Symphony2 and Laravel. Both seemed good PHP MVC frameworks, but two years ago, being brand new at the time, Laravel lacked a reasonable sized community. Chances were that if I encountered issues I&amp;#39;d be all on my own to find answers to fix them. And since I was a complete rookie, it would have been a too risky choice.&lt;/p&gt;
-
-&lt;p&gt;After a few tries, I successfully installed a Symphony2 version on my school computer and for the first time I started to see the way you&amp;#39;re supposed to do things when you &lt;em&gt;truely&lt;/em&gt; code. No more &amp;quot;new_file.php&amp;quot; this time, I used my terminal to do things and I must admit : I was completely lost.&lt;/p&gt;
-
-&lt;hr&gt;
-
-&lt;h3&gt;Rage Against the Terminal&lt;/h3&gt;
-
-&lt;p&gt;&lt;br&gt;&lt;/p&gt;
+&lt;h1 id=&quot;the-bootstrap-sorcery&quot;&gt;The Bootstrap sorcery&lt;/h1&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;center&gt;&lt;img alt=&quot;&quot; src=&quot;https://s3.amazonaws.com/f.cl.ly/items/0E3y0P3W3t2I401v2f2J/bootstrap.png&quot; style=&quot;height:210px&quot; /&gt;&lt;/center&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;&lt;em&gt;&amp;quot;Terminal ? But I wanna do web projects ! That doesn&amp;#39;t make any sense at all !&amp;quot;&lt;/em&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;em&gt;Have you heard of this &#39;Bootstrap&#39; thing ? It looks awesome !&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;Yup. Again, as I said, I &lt;em&gt;really&lt;/em&gt; started from scratch ! Seeing my black and white terminal again felt like a failure. I wanted neat designs and cool animations this &amp;quot;javascript&amp;quot; thing had shown me, not this prehistoric-looking thing again ! I already had enough of it with the C# scripting !&lt;/p&gt;
+&lt;p&gt;That’s the newbie I was, one year ago, approaching strange things called “frameworks”.&lt;/p&gt;
 
-&lt;p&gt;I was far from understanding that this thing was going to be one of my best friends for the job. Symphony2 had shown me a glimpse of the mechanics, but Ruby on Rails really made me understand that even the coolest tools sometimes require good ol&amp;#39; stuff like this terminal. And even if the results shows on a web browser, the real magic is hidden behind, somewhere else.&lt;/p&gt;
+&lt;p&gt;Even if frameworks look georgeous &lt;small class=&quot;text-grey&quot;&gt;&lt;em&gt;(most of the time)&lt;/em&gt;&lt;/small&gt;, you should take your time and try to do things by yourself. Because those things bring this magic to you, they do all the complicated stuff in the background while you get the benfits from it. The main issue is that you miss how things really work and you get to the next step of developement complexity completely unprepared. Of course you don’t have to reinvent the wheel every time you need a car, but try to do it at least one time so that you have the big picture of what’s going on.&lt;/p&gt;
 
-&lt;p&gt;About how my choice for Ruby and Ruby on Rails was made, the main issue that I had with PHP at the time &lt;small class=&quot;text-grey&quot;&gt;&lt;em&gt;(aside from the horrific amount of dollar signs)&lt;/em&gt;&lt;/small&gt; is that I already knew that &amp;quot;every web developer knew how to use PHP&amp;quot;. So I took the bet of &amp;quot;doing something else&amp;quot;, not to be the coolest kid in town, but to have an additional chance to stand out. Even if there&amp;#39;s a lack of developers in our society right now, I felt like I had to do something to have one more chance than the others. I wanted to do something more than being &amp;quot;one more Symfony2 developer&amp;quot;.&lt;/p&gt;
+&lt;p&gt;So there I was, with a handful of small projects made out of procedural PHP in my bag, no knowledge of how to structure my work and not a single idea of how a framework works. First I learnt the &lt;a href=&quot;http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller&quot; target=&quot;_blank&quot;&gt;Model View Controller&lt;/a&gt; pattern, which you should keep a close eye on. Most of the web based framworks use this way to do stuff and it’s pretty cool.&lt;/p&gt;
+
+&lt;center&gt;&lt;img alt=&quot;&quot; src=&quot;https://s3.amazonaws.com/f.cl.ly/items/0L0t3y023n3h1h1x0D19/symfony.png&quot; style=&quot;height:210px&quot; /&gt;&lt;/center&gt;
+
+&lt;p&gt;Only knowing PHP and C#, my first two targets at the time were Symphony2 and Laravel. Both seemed good PHP MVC frameworks, but two years ago, being brand new at the time, Laravel lacked a reasonable sized community. Chances were that if I encountered issues I’d be all on my own to find answers to fix them. And since I was a complete rookie, it would have been a too risky choice.&lt;/p&gt;
+
+&lt;p&gt;After a few tries, I successfully installed a Symphony2 version on my school computer and for the first time I started to see the way you’re supposed to do things when you &lt;em&gt;truely&lt;/em&gt; code. No more “new_file.php” this time, I used my terminal to do things and I must admit : I was completely lost.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;rage-against-the-terminal&quot;&gt;Rage Against the Terminal&lt;/h1&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;“Terminal ? But I wanna do web projects ! That doesn’t make any sense at all !”&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Yup. Again, as I said, I &lt;em&gt;really&lt;/em&gt; started from scratch ! Seeing my black and white terminal again felt like a failure. I wanted neat designs and cool animations this “javascript” thing had shown me, not this prehistoric-looking thing again ! I already had enough of it with the C# scripting !&lt;/p&gt;
+
+&lt;p&gt;I was far from understanding that this thing was going to be one of my best friends for the job. Symphony2 had shown me a glimpse of the mechanics, but Ruby on Rails really made me understand that even the coolest tools sometimes require good ol’ stuff like this terminal. And even if the results shows on a web browser, the real magic is hidden behind, somewhere else.&lt;/p&gt;
+
+&lt;p&gt;About how my choice for Ruby and Ruby on Rails was made, the main issue that I had with PHP at the time &lt;small class=&quot;text-grey&quot;&gt;&lt;em&gt;(aside from the horrific amount of dollar signs)&lt;/em&gt;&lt;/small&gt; is that I already knew that “every web developer knew how to use PHP”. So I took the bet of “doing something else”, not to be the coolest kid in town, but to have an additional chance to stand out. Even if there’s a lack of developers in our society right now, I felt like I had to do something to have one more chance than the others. I wanted to do something more than being “one more Symfony2 developer”.&lt;/p&gt;
 
 &lt;p&gt;I had two choices at the time : Ruby and Python. Both looked really cool, had very nice tools, huge communities and were web oriented. Since most of my developer friends are currently rubyists &lt;small class=&quot;text-grey&quot;&gt;&lt;em&gt;(and since the very strict look of Python syntax frightened me the first time I saw it)&lt;/em&gt;&lt;/small&gt; I chose Ruby.&lt;/p&gt;
 
-&lt;p&gt;&lt;span style=&#39;color:#CF000F&#39;&gt;Red&lt;/span&gt; was my color, it looked clean, elegant and everything about it was saying to me : &lt;em&gt;Look kid, this is how it&amp;#39;s done&lt;/em&gt;. I knew it was the language for me, and I&amp;#39;m not ashamed to admit that it really was love at first sight.&lt;/p&gt;
+&lt;p&gt;&lt;span style=&quot;color:#CF000F&quot;&gt;Red&lt;/span&gt; was my color, it looked clean, elegant and everything about it was saying to me : &lt;em&gt;Look kid, this is how it’s done&lt;/em&gt;. I knew it was the language for me, and I’m not ashamed to admit that it really was love at first sight.&lt;/p&gt;
 
-&lt;hr&gt;
+&lt;hr /&gt;
 
-&lt;h3&gt;No pain, no gain&lt;/h3&gt;
-
-&lt;p&gt;&lt;br&gt;
-&lt;center&gt;&lt;img alt =&quot;&quot; src= &quot;https://s3.amazonaws.com/f.cl.ly/items/061g2t10380n292v3300/ror_logo.png&quot; style=&quot;height:210px&quot;&gt;&lt;/center&gt;
-&lt;br&gt;&lt;/p&gt;
+&lt;h1 id=&quot;no-pain-no-gain&quot;&gt;No pain, no gain&lt;/h1&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;center&gt;&lt;img alt=&quot;&quot; src=&quot;https://s3.amazonaws.com/f.cl.ly/items/061g2t10380n292v3300/ror_logo.png&quot; style=&quot;height:210px&quot; /&gt;&lt;/center&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;&lt;em&gt;&amp;quot;So how does it work ? Let&amp;#39;s install Ruby on Rails and figure it out !&amp;quot;&lt;/em&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;em&gt;“So how does it work ? Let’s install Ruby on Rails and figure it out !”&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;Let me be crystal clear about it : &lt;strong&gt;DON&amp;#39;T START LEARNING RUBY THE WAY I DID.&lt;/strong&gt;
-If I wasn&amp;#39;t as motivated as the way I was at this time, there would have been absolutely no chance for me to succeed. I litterally began my journey at the end.
+&lt;p&gt;Let me be crystal clear about it : &lt;strong&gt;DON’T START LEARNING RUBY THE WAY I DID.&lt;/strong&gt;
+If I wasn’t as motivated as the way I was at this time, there would have been absolutely no chance for me to succeed. I litterally began my journey at the end.
 If you master the basics in programing and have a very good undestanding of OOP, learning Ruby is not actually that complicated, even though the coolest tricks may require attention. You just have to keep in mind that ruby is object oriented and that every function has now become a method. Just to try to create a few scripts then try to create a gem, have a reasonable start !
 But the way I started to learn Ruby was probably the worst : inside Ruby on Rails. Yup, I learnt the two at the same time.
-It was an awful idea. Not knowing the full extent of Ruby and all the subtle tricks, I often mistook Rails&amp;#39; methods and Ruby&amp;#39;s. Since a framework is supposed to extend the potential of a given language by bringing additionnal tools, you&amp;#39;re better off knowing who does what or you&amp;#39;ll be confused all the time.
-So take your time, learn Ruby slowly but surely, then try &lt;a href=&#39;http://www.sinatrarb.com/&#39; target=&#39;_blank&#39;&gt;Sinatra&lt;/a&gt;, a light Ruby framework, and build lightweight app. And when you&amp;#39;ll limited by what what you can do with it, take the big step towards Ruby on Rails !
-I insist a lot on the &amp;quot;Take you time&amp;quot; gimmick because, in my case, I may have rushed too much. Try to build you skill one brick at a time, learn small thing and then big things or you&amp;#39;ll may be overrun by the missing pieces of the puzzle.&lt;/p&gt;
+It was an awful idea. Not knowing the full extent of Ruby and all the subtle tricks, I often mistook Rails’ methods and Ruby’s. Since a framework is supposed to extend the potential of a given language by bringing additionnal tools, you’re better off knowing who does what or you’ll be confused all the time.
+So take your time, learn Ruby slowly but surely, then try &lt;a href=&quot;http://www.sinatrarb.com/&quot; target=&quot;_blank&quot;&gt;Sinatra&lt;/a&gt;, a light Ruby framework, and build lightweight app. And when you’ll limited by what what you can do with it, take the big step towards Ruby on Rails !
+I insist a lot on the “Take you time” gimmick because, in my case, I may have rushed too much. Try to build you skill one brick at a time, learn small thing and then big things or you’ll may be overrun by the missing pieces of the puzzle.&lt;/p&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;&lt;em&gt;&amp;quot;Migrate a database ? Scaffolding ? What ?&amp;quot;&lt;/em&gt;&lt;/p&gt;
+  &lt;p&gt;&lt;em&gt;“Migrate a database ? Scaffolding ? What ?”&lt;/em&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
 &lt;p&gt;My &lt;em&gt;big jump&lt;/em&gt; felt like being dropped in a jungle, naked, with only a spoon at my disposal.
-French programming schools never confront you this kind of stuff, they try to convince you that the &amp;quot;web&amp;quot; is PHP websites made with Wordpress or Drupal, which is truely a shame. Because you can&amp;#39;t be completely open-minded if you restrain yourself to only doing websites. Being a web developer represents much more than just that. The more you let yourself be sucked in by this logic, the harder it gets to face the challenges of learning a framework. Because yes, doing your &amp;quot;index.php&amp;quot; website was fun but you only caught a glimpse of the very tip of the iceberg.
-In my case, the amazing Rails community and awesome tutorials &lt;small class=&quot;text-grey&quot;&gt;&lt;em&gt;(like &lt;a href=&quot;http://guides.rubyonrails.org/getting_started.html&quot; target=&#39;_blank&#39;&gt;this one&lt;/a&gt;)&lt;/em&gt;&lt;/small&gt; helped me to get myself started. It covers the most basic stuff &lt;small class=&quot;text-grey&quot;&gt;&lt;em&gt;(creating a blog or managing simple resources with CRUD options)&lt;/small&gt;&lt;/em&gt; and really helps to grasp the basics.&lt;/p&gt;
+French programming schools never confront you this kind of stuff, they try to convince you that the “web” is PHP websites made with Wordpress or Drupal, which is truely a shame. Because you can’t be completely open-minded if you restrain yourself to only doing websites. Being a web developer represents much more than just that. The more you let yourself be sucked in by this logic, the harder it gets to face the challenges of learning a framework. Because yes, doing your “index.php” website was fun but you only caught a glimpse of the very tip of the iceberg.
+In my case, the amazing Rails community and awesome tutorials &lt;small class=&quot;text-grey&quot;&gt;&lt;em&gt;(like &lt;a href=&quot;http://guides.rubyonrails.org/getting_started.html&quot; target=&quot;_blank&quot;&gt;this one&lt;/a&gt;)&lt;/em&gt;&lt;/small&gt; helped me to get myself started. It covers the most basic stuff &lt;small class=&quot;text-grey&quot;&gt;&lt;em&gt;(creating a blog or managing simple resources with CRUD options)&amp;lt;/small&amp;gt;&lt;/em&gt; and really helps to grasp the basics.&lt;/small&gt;&lt;/p&gt;
 
-&lt;hr&gt;
+&lt;hr /&gt;
 
-&lt;h3&gt;Create things, share things.&lt;/h3&gt;
+&lt;h1 id=&quot;create-things-share-things&quot;&gt;Create things, share things.&lt;/h1&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;center&gt;&lt;img alt=&quot;&quot; src=&quot;https://tctechcrunch2011.files.wordpress.com/2010/07/github-logo.png&quot; style=&quot;height:210px&quot; /&gt;&lt;/center&gt;
 
-&lt;p&gt;&lt;br&gt;
-&lt;center&gt;&lt;img alt =&quot;&quot; src= &quot;https://tctechcrunch2011.files.wordpress.com/2010/07/github-logo.png&quot; style=&quot;height:210px&quot;&gt;&lt;/center&gt;&lt;/p&gt;
-
-&lt;p&gt;After that I created &lt;a href=&quot;http://sparkbook.herokuapp.com&quot; target=&quot;_blank&quot;&gt;Sparkbook&lt;/a&gt; . A book collection assistant that helped me to grasp the concepts of relation between classes. Since the &amp;quot;has many through&amp;quot; relation bugged me for a long time, this was a great opportunity to finally understand how to make SQL calls through objects that were related that way.
-I also developed a minimalist blog with Sinatra and ActiveRecord called &lt;a href=&quot;http://github.com/yinfei/spinel&quot;&gt;&amp;quot;Spinel&amp;quot;&lt;/a&gt;, you can fork it or clone it to add your needs.
-Two years after I started to learn programing, I&amp;#39;m finally able to create things that I can share to people. I try to solve problems while I&amp;#39;m having fun and I hope you&amp;#39;ll feel that thrill too. I&amp;#39;ve never been this excited to wake up in the morning to go to my job.
-Thanks to Spinel I&amp;#39;ve been able to share this story with you and I hope you liked it. Don&amp;#39;t hesitate to give programmation a shot if you&amp;#39;re curious, computers are less scary than what you think !
+&lt;p&gt;After that I created &lt;a href=&quot;http://sparkbook.herokuapp.com&quot; target=&quot;_blank&quot;&gt;Sparkbook&lt;/a&gt; . A book collection assistant that helped me to grasp the concepts of relation between classes. Since the “has many through” relation bugged me for a long time, this was a great opportunity to finally understand how to make SQL calls through objects that were related that way.
+I also developed a minimalist blog with Sinatra and ActiveRecord called &lt;a href=&quot;http://github.com/yinfei/spinel&quot;&gt;“Spinel”&lt;/a&gt;, you can fork it or clone it to add your needs.
+Two years after I started to learn programing, I’m finally able to create things that I can share to people. I try to solve problems while I’m having fun and I hope you’ll feel that thrill too. I’ve never been this excited to wake up in the morning to go to my job.
+Thanks to Spinel I’ve been able to share this story with you and I hope you liked it. Don’t hesitate to give programmation a shot if you’re curious, computers are less scary than what you think !
 And once again : take it easy, go one step at a time.&lt;/p&gt;
 </description>
         <pubDate>Sun, 30 Nov 2014 15:34:25 +0100</pubDate>

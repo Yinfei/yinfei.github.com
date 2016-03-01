@@ -1,22 +1,21 @@
 # Build settings
-markdown: redcarpet
-highlighter: pygments
+highlighter: rouge
 gems:
   - jemoji
+  - jekyll-paginate
 
 # Site settings
 title: "YinBlog"
 description: "Videogames • Web Development • Cats"
 
-email: a-mail@mail.mail
 #blog logo
-logo: "/assets/images/businesscat.jpg"
+logo: "/assets/images/venom.png"
 # blog cover
 cover: "/assets/images/shibuya.jpg"
 
 name: 'Yohan Piron'
 author: 'Yohan Piron'
-author_image: "/assets/images/businesscat.jpg"
+author_image: "/assets/images/venom.png"
 
 paginate:	5
 

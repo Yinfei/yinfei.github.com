@@ -9,8 +9,9 @@ comments: true
 
 For my second year of programming with Ruby on Rails, I wanted to share with you my experience with this framework, from the first steps to where I am now.
 
----
-###Heading in a new direction
+<hr>
+Heading in a new direction
+===
 <br>
 Two years ago, after five years spent in the communication and PR business, I started taking coding lessons form a school in france named AFPA. After all this time spent in the classical music media, I became aware of the fact that my career didn't turn out the way I wanted it to, so I decided to set out towards a new world : **programming**.
 
@@ -25,8 +26,10 @@ As for myself, hard work, research and guided exercices helped me through this l
 
 Going from writing a fed algorithms on paper to elaborating those projects is what got me seriously motivated to push further and start my own projects, even if i didn't know where to start or which tools best suited them. I recommend you to benchmark the tools you might use : languages, development environments... because the most suited for you they are, the more productive you'll be.
 
----
-###The Bootstrap sorcery
+<hr>
+
+The Bootstrap sorcery
+===
 <br>
 <center><img alt="" src="https://s3.amazonaws.com/f.cl.ly/items/0E3y0P3W3t2I401v2f2J/bootstrap.png" style="height:210px"></center>
 
@@ -45,9 +48,11 @@ Only knowing PHP and C#, my first two targets at the time were Symphony2 and Lar
 
 After a few tries, I successfully installed a Symphony2 version on my school computer and for the first time I started to see the way you're supposed to do things when you *truely* code. No more "new_file.php" this time, I used my terminal to do things and I must admit : I was completely lost.
 
----
-###Rage Against the Terminal
+<hr/>
+Rage Against the Terminal
+===
 <br>
+
 >*"Terminal ? But I wanna do web projects ! That doesn't make any sense at all !"*
 
 
@@ -61,8 +66,9 @@ I had two choices at the time : Ruby and Python. Both looked really cool, had ve
 
 <span style='color:#CF000F'>Red</span> was my color, it looked clean, elegant and everything about it was saying to me : *Look kid, this is how it's done*. I knew it was the language for me, and I'm not ashamed to admit that it really was love at first sight.
 
----
-###No pain, no gain
+<hr/>
+No pain, no gain
+===
 <br>
 <center><img alt ="" src= "https://s3.amazonaws.com/f.cl.ly/items/061g2t10380n292v3300/ror_logo.png" style="height:210px"></center>
 <br>
@@ -84,8 +90,9 @@ My *big jump* felt like being dropped in a jungle, naked, with only a spoon at m
 French programming schools never confront you this kind of stuff, they try to convince you that the "web" is PHP websites made with Wordpress or Drupal, which is truely a shame. Because you can't be completely open-minded if you restrain yourself to only doing websites. Being a web developer represents much more than just that. The more you let yourself be sucked in by this logic, the harder it gets to face the challenges of learning a framework. Because yes, doing your "index.php" website was fun but you only caught a glimpse of the very tip of the iceberg.
 In my case, the amazing Rails community and awesome tutorials <small class="text-grey">*(like <a href="http://guides.rubyonrails.org/getting_started.html" target='_blank'>this one</a>)*</small> helped me to get myself started. It covers the most basic stuff <small class="text-grey">*(creating a blog or managing simple resources with CRUD options)</small>* and really helps to grasp the basics.
 
----
-###Create things, share things.
+<hr/>
+Create things, share things.
+===
 <br>
 <center><img alt ="" src= "https://tctechcrunch2011.files.wordpress.com/2010/07/github-logo.png" style="height:210px"></center>
 
