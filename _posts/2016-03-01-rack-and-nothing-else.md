@@ -23,8 +23,9 @@ Keep in mind that a `.ruby-version` file would be really appreciated by your Rub
 
 Now just run
 
-
+```bash
 $ bundle install
+```
 
 Our project, at this step:
 
