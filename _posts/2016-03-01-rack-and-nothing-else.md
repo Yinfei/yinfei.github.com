@@ -25,7 +25,6 @@ Now just run
 
 
 $ bundle install
-```
 
 Our project, at this step:
 
