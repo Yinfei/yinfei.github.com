@@ -12,6 +12,7 @@ The setup
 ---
 
 First of all, we'll need at the root of our project a `Gemfile` file with those few lines:
+
 ```ruby
 source 'https://rubygems.org'
 
@@ -21,11 +22,13 @@ gem 'rack'
 Keep in mind that a `.ruby-version` file would be really appreciated by your Ruby version manager too, just type in there: `2.2.3`, or any other Ruby version of your choice.
 
 Now just run
-```shell
+
+
 $ bundle install
 ```
 
 Our project, at this step:
+
 ```
 /my_project
  - .ruby_version
@@ -37,6 +40,7 @@ Step 1: Hello world!
 ---
 
 As [Rack website](http://rack.github.io/) explains, at the root of our project, a `config.ru` file like this:
+
 ```ruby
 run Proc.new { |env| ['200', {'Content-Type' => 'text/html'}, ['Hello world!']] }
 ```

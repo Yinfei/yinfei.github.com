@@ -5,21 +5,58 @@
     <description>Videogames • Web Development • Cats</description>
     <link>http://yinfei.github.io/</link>
     <atom:link href="http://yinfei.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Tue, 01 Mar 2016 23:35:24 +0100</pubDate>
-    <lastBuildDate>Tue, 01 Mar 2016 23:35:24 +0100</lastBuildDate>
+    <pubDate>Wed, 16 Mar 2016 10:58:39 +0100</pubDate>
+    <lastBuildDate>Wed, 16 Mar 2016 10:58:39 +0100</lastBuildDate>
     <generator>Jekyll v3.1.2</generator>
     
       <item>
         <title>Rack and nothing else</title>
-        <description>&lt;h1 id=&quot;test&quot;&gt;Test&lt;/h1&gt;
-&lt;p&gt;Foo bar baz.&lt;/p&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Lol&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;foo&lt;/span&gt;
-    &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;lol&#39;&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+        <description>&lt;p&gt;The main objective of this blogpost will be to build a Ruby werbserver with Rack as the only gem of our Gemfile and see how far we can go in our app complexity.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-setup&quot;&gt;The setup&lt;/h2&gt;
+
+&lt;p&gt;First of all, we’ll need at the root of our project a &lt;code class=&quot;highlighter-rouge&quot;&gt;Gemfile&lt;/code&gt; file with those few lines:
+```ruby
+source ‘https://rubygems.org’&lt;/p&gt;
+
+&lt;p&gt;gem ‘rack’
+```&lt;/p&gt;
+
+&lt;p&gt;Keep in mind that a &lt;code class=&quot;highlighter-rouge&quot;&gt;.ruby-version&lt;/code&gt; file would be really appreciated by your Ruby version manager too, just type in there: &lt;code class=&quot;highlighter-rouge&quot;&gt;2.2.3&lt;/code&gt;, or any other Ruby version of your choice.&lt;/p&gt;
+
+&lt;p&gt;Now just run
+&lt;code class=&quot;highlighter-rouge&quot;&gt;shell
+$ bundle install
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Our project, at this step:
+&lt;code class=&quot;highlighter-rouge&quot;&gt;
+/my_project
+ - .ruby_version
+ - Gemfile
+ - Gemfile.lock
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;step-1-hello-world&quot;&gt;Step 1: Hello world!&lt;/h2&gt;
+
+&lt;p&gt;As &lt;a href=&quot;http://rack.github.io/&quot;&gt;Rack website&lt;/a&gt; explains, at the root of our project, a &lt;code class=&quot;highlighter-rouge&quot;&gt;config.ru&lt;/code&gt; file like this:
+&lt;code class=&quot;highlighter-rouge&quot;&gt;ruby
+run Proc.new { |env| [&#39;200&#39;, {&#39;Content-Type&#39; =&amp;gt; &#39;text/html&#39;}, [&#39;Hello world!&#39;]] }
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;can run in a Rack server with a &lt;code class=&quot;highlighter-rouge&quot;&gt;bundle exec rackup config.ru&lt;/code&gt; command in your terminal.  A quick check at &lt;code class=&quot;highlighter-rouge&quot;&gt;localhost:8080&lt;/code&gt; in your browser will show you this :&lt;/p&gt;
+
+&lt;p&gt;&amp;lt; screenshot &amp;gt;&lt;/p&gt;
+
+&lt;p&gt;It works !&lt;/p&gt;
+
+&lt;p&gt;Now let’s see in details the content of the array our &lt;code class=&quot;highlighter-rouge&quot;&gt;Proc&lt;/code&gt; instance gave to Rack:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;200&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;Content-Type&#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;text/html&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;Hello world!&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
+
+&lt;p&gt;The first item is the HTTP code sent by our server, the second are the headers sent for the response and the last is the body of the response.&lt;/p&gt;
 </description>
         <pubDate>Tue, 01 Mar 2016 22:38:44 +0100</pubDate>
         <link>http://yinfei.github.io/dev/2016/03/01/rack-and-nothing-else.html</link>

@@ -60,15 +60,52 @@
             <span class="post-reading-time"></span> read
           </div>
           <a name="topofpage"></a>
-          <h1 id="test">Test</h1>
-<p>Foo bar baz.</p>
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Lol</span>
-  <span class="k">def</span> <span class="nf">foo</span>
-    <span class="nb">puts</span> <span class="s1">'lol'</span>
-  <span class="k">end</span>
-<span class="k">end</span>
+          <p>The main objective of this blogpost will be to build a Ruby werbserver with Rack as the only gem of our Gemfile and see how far we can go in our app complexity.</p>
+
+<h2 id="the-setup">The setup</h2>
+
+<p>First of all, we’ll need at the root of our project a <code class="highlighter-rouge">Gemfile</code> file with those few lines:
+```ruby
+source ‘https://rubygems.org’</p>
+
+<p>gem ‘rack’
+```</p>
+
+<p>Keep in mind that a <code class="highlighter-rouge">.ruby-version</code> file would be really appreciated by your Ruby version manager too, just type in there: <code class="highlighter-rouge">2.2.3</code>, or any other Ruby version of your choice.</p>
+
+<p>Now just run
+<code class="highlighter-rouge">shell
+$ bundle install
+</code></p>
+
+<p>Our project, at this step:
+<code class="highlighter-rouge">
+/my_project
+ - .ruby_version
+ - Gemfile
+ - Gemfile.lock
+</code></p>
+
+<h2 id="step-1-hello-world">Step 1: Hello world!</h2>
+
+<p>As <a href="http://rack.github.io/">Rack website</a> explains, at the root of our project, a <code class="highlighter-rouge">config.ru</code> file like this:
+<code class="highlighter-rouge">ruby
+run Proc.new { |env| ['200', {'Content-Type' =&gt; 'text/html'}, ['Hello world!']] }
+</code></p>
+
+<p>can run in a Rack server with a <code class="highlighter-rouge">bundle exec rackup config.ru</code> command in your terminal.  A quick check at <code class="highlighter-rouge">localhost:8080</code> in your browser will show you this :</p>
+
+<p>&lt; screenshot &gt;</p>
+
+<p>It works !</p>
+
+<p>Now let’s see in details the content of the array our <code class="highlighter-rouge">Proc</code> instance gave to Rack:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="p">[</span><span class="s1">'200'</span><span class="p">,</span> <span class="p">{</span><span class="s1">'Content-Type'</span> <span class="o">=&gt;</span> <span class="s1">'text/html'</span><span class="p">},</span> <span class="p">[</span><span class="s1">'Hello world!'</span><span class="p">]]</span>
 </code></pre>
 </div>
+
+<p>The first item is the HTTP code sent by our server, the second are the headers sent for the response and the last is the body of the response.</p>
 
         </section>
         <footer class="post-footer">
