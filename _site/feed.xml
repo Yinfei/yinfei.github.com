@@ -5,58 +5,201 @@
     <description>Videogames • Web Development • Cats</description>
     <link>http://yinfei.github.io/</link>
     <atom:link href="http://yinfei.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Wed, 16 Mar 2016 10:58:39 +0100</pubDate>
-    <lastBuildDate>Wed, 16 Mar 2016 10:58:39 +0100</lastBuildDate>
+    <pubDate>Sat, 26 Mar 2016 19:10:13 +0100</pubDate>
+    <lastBuildDate>Sat, 26 Mar 2016 19:10:13 +0100</lastBuildDate>
     <generator>Jekyll v3.1.2</generator>
     
       <item>
         <title>Rack and nothing else</title>
-        <description>&lt;p&gt;The main objective of this blogpost will be to build a Ruby werbserver with Rack as the only gem of our Gemfile and see how far we can go in our app complexity.&lt;/p&gt;
+        <description>&lt;p&gt;The main objective of this blogpost will be to build a Ruby werbserver with Rack
+as the only gem of our Gemfile and see how far we can go in our app complexity.&lt;/p&gt;
+&lt;hr /&gt;
 
 &lt;h2 id=&quot;the-setup&quot;&gt;The setup&lt;/h2&gt;
+&lt;p&gt;&lt;br /&gt;
+I strongly recommend having a Ruby Version manager installed, I personnaly use
+&lt;a href=&quot;https://github.com/rbenv/rbenv&quot; target=&quot;_blank&quot;&gt;Rbenv&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;First of all, we’ll need at the root of our project a &lt;code class=&quot;highlighter-rouge&quot;&gt;Gemfile&lt;/code&gt; file with those few lines:
-```ruby
-source ‘https://rubygems.org’&lt;/p&gt;
+&lt;p&gt;First of all, we’ll need at the root of our project a &lt;code class=&quot;highlighter-rouge&quot;&gt;Gemfile&lt;/code&gt; file with those
+few lines:&lt;/p&gt;
 
-&lt;p&gt;gem ‘rack’
-```&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;source&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;https://rubygems.org&#39;&lt;/span&gt;
 
-&lt;p&gt;Keep in mind that a &lt;code class=&quot;highlighter-rouge&quot;&gt;.ruby-version&lt;/code&gt; file would be really appreciated by your Ruby version manager too, just type in there: &lt;code class=&quot;highlighter-rouge&quot;&gt;2.2.3&lt;/code&gt;, or any other Ruby version of your choice.&lt;/p&gt;
+&lt;span class=&quot;n&quot;&gt;gem&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;rack&#39;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;
+Keep in mind that a &lt;code class=&quot;highlighter-rouge&quot;&gt;.ruby-version&lt;/code&gt; file would be really appreciated by your
+Ruby version manager too, just type in there: &lt;code class=&quot;highlighter-rouge&quot;&gt;2.2.3&lt;/code&gt;, or any other Ruby
+version of your choice.&lt;/p&gt;
 
-&lt;p&gt;Now just run
-&lt;code class=&quot;highlighter-rouge&quot;&gt;shell
-$ bundle install
-&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Now just run the &lt;code class=&quot;highlighter-rouge&quot;&gt;bundle install&lt;/code&gt; command in your terminal. Our project, at
+this step, should look like this:&lt;/p&gt;
 
-&lt;p&gt;Our project, at this step:
-&lt;code class=&quot;highlighter-rouge&quot;&gt;
-/my_project
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/my_project
  - .ruby_version
  - Gemfile
  - Gemfile.lock
-&lt;/code&gt;&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;hr /&gt;
 
 &lt;h2 id=&quot;step-1-hello-world&quot;&gt;Step 1: Hello world!&lt;/h2&gt;
+&lt;p&gt;&lt;br /&gt;
+As &lt;a href=&quot;http://rack.github.io/&quot;&gt;Rack website&lt;/a&gt; explains, at the root of our project,
+a &lt;code class=&quot;highlighter-rouge&quot;&gt;config.ru&lt;/code&gt; file like this:&lt;/p&gt;
 
-&lt;p&gt;As &lt;a href=&quot;http://rack.github.io/&quot;&gt;Rack website&lt;/a&gt; explains, at the root of our project, a &lt;code class=&quot;highlighter-rouge&quot;&gt;config.ru&lt;/code&gt; file like this:
-&lt;code class=&quot;highlighter-rouge&quot;&gt;ruby
-run Proc.new { |env| [&#39;200&#39;, {&#39;Content-Type&#39; =&amp;gt; &#39;text/html&#39;}, [&#39;Hello world!&#39;]] }
-&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;rack&#39;&lt;/span&gt;
 
-&lt;p&gt;can run in a Rack server with a &lt;code class=&quot;highlighter-rouge&quot;&gt;bundle exec rackup config.ru&lt;/code&gt; command in your terminal.  A quick check at &lt;code class=&quot;highlighter-rouge&quot;&gt;localhost:8080&lt;/code&gt; in your browser will show you this :&lt;/p&gt;
+&lt;span class=&quot;n&quot;&gt;run&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Proc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;env&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;200&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;Content-Type&#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;text/html&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;Hello world!&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;
+can run in a Rack server with a &lt;code class=&quot;highlighter-rouge&quot;&gt;bundle exec rackup config.ru&lt;/code&gt; command in your
+terminal.  A quick check at &lt;code class=&quot;highlighter-rouge&quot;&gt;localhost:9292&lt;/code&gt; (9292 being rack default port) in
+your browser will show you this :&lt;/p&gt;
 
-&lt;p&gt;&amp;lt; screenshot &amp;gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/article_images/2016-03-01-rack-and-nothing-else/hello_world.png&quot; alt=&quot;It works!&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;It works !&lt;/p&gt;
-
-&lt;p&gt;Now let’s see in details the content of the array our &lt;code class=&quot;highlighter-rouge&quot;&gt;Proc&lt;/code&gt; instance gave to Rack:&lt;/p&gt;
+&lt;p&gt;Now let’s see in details the content of the array our
+&lt;a href=&quot;http://ruby-doc.org/core-2.2.3/Proc.html&quot; target=&quot;_blank&quot;&gt;Proc&lt;/a&gt; instance gave
+to Rack:&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;200&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;Content-Type&#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;text/html&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;Hello world!&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;
+The first item is the HTTP code sent by our server, the second is the headers
+sent by the server for the response and the last is the body of the response
+itself: in this case plain text.&lt;/p&gt;
 
-&lt;p&gt;The first item is the HTTP code sent by our server, the second are the headers sent for the response and the last is the body of the response.&lt;/p&gt;
+&lt;p&gt;The next step will be to read an &lt;code class=&quot;highlighter-rouge&quot;&gt;.erb&lt;/code&gt; file! Our project at this point:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/my_project
+ - .ruby_version
+ - config.ru
+ - Gemfile
+ - Gemfile.lock
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;step-2-lets-read-some-erb-&quot;&gt;Step 2: Let’s read some .erb !&lt;/h2&gt;
+&lt;p&gt;&lt;br /&gt;
+While we’re working with ruby, it would be cool to load erb views. This way we
+could use ruby code in it!&lt;/p&gt;
+
+&lt;p&gt;Let’s add a &lt;code class=&quot;highlighter-rouge&quot;&gt;layout.erb&lt;/code&gt; view to our project in a &lt;code class=&quot;highlighter-rouge&quot;&gt;views&lt;/code&gt;:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;It&#39;s &lt;span class=&quot;cp&quot;&gt;&amp;lt;%=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Time&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;now&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;strftime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;%H:%M&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;cp&quot;&gt;%&amp;gt;&lt;/span&gt;!&lt;span class=&quot;nt&quot;&gt;&amp;lt;/p&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;
+Since we’re lucky, the &lt;code class=&quot;highlighter-rouge&quot;&gt;ERB&lt;/code&gt; class is
+&lt;a href=&quot;http://ruby-doc.org/stdlib-2.2.3/libdoc/erb/rdoc/ERB.html&quot; target=&quot;_blank&quot;&gt;part of ruby Standard Lib&lt;/a&gt;,
+so no need for another gem!&lt;/p&gt;
+
+&lt;p&gt;Reading erb content isn’t that hard in fact. In ruby, reading a file can be written like this:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;file_path&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Dir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;pwd&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;/views/layout.erb&#39;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;file_content&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;File&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;read&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;File&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;expand_path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;file_path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;
+Render its erb content afterwards would just be something like this:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;no&quot;&gt;ERB&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;file_content&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;binding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;
+In this case &lt;code class=&quot;highlighter-rouge&quot;&gt;binding&lt;/code&gt; will be the result of the erb interpretation done by the &lt;code class=&quot;highlighter-rouge&quot;&gt;result&lt;/code&gt; method call.&lt;/p&gt;
+
+&lt;p&gt;Now let’s extract the body response in its own method and implement all of this in our &lt;code class=&quot;highlighter-rouge&quot;&gt;config.ru&lt;/code&gt; :&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;rack&#39;&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;erb&#39;&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;read_erb_file&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;file_path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;file_content&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;File&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;read&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;File&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;expand_path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;file_path&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+  &lt;span class=&quot;n&quot;&gt;erb_load&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;ERB&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;file_content&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;result&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;binding&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+  &lt;span class=&quot;no&quot;&gt;Proc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;|&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;env&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;|&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;200&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;Content-Type&#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;text/html&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;erb_load&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;body&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;read_erb_file&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Dir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;pwd&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;/views/layout.erb&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;run&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;body&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;
+A &lt;code class=&quot;highlighter-rouge&quot;&gt;bundle exec rackup config.ru&lt;/code&gt; command and a look at &lt;code class=&quot;highlighter-rouge&quot;&gt;localhost:9292&lt;/code&gt; will show you this :&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/article_images/2016-03-01-rack-and-nothing-else/erb_loaded.png&quot; alt=&quot;We load ERB files!&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Our project at this point is getting bigger:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/my_project
+  /views
+    - layout.erb
+ - .ruby_version
+ - config.ru
+ - Gemfile
+ - Gemfile.lock
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;
+The next step will be to create few more views and dynamically serve them!&lt;/p&gt;
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;step-3-more-routes&quot;&gt;Step 3: More routes&lt;/h2&gt;
+&lt;p&gt;&lt;br /&gt;
+Let’s add more file to our project, we’ll make a directory named &lt;code class=&quot;highlighter-rouge&quot;&gt;posts&lt;/code&gt;
+with two files in it, I’ll just put the files name in their content at this moment :&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/my_project
+  /views
+    - layout.erb
+  /posts
+    - foo.rb
+    - bar.rb
+ - .ruby_version
+ - Gemfile
+ - Gemfile.lock
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;
+First of all, if we’re to load multiple Procs, we’ll need the
+&lt;a href=&quot;http://www.rubydoc.info/github/rack/rack/Rack/URLMap&quot; target=&quot;_blank&quot;&gt;Rack::URLMap&lt;/a&gt;
+class. It would allow us to load a hash of routes linked to Procs. So, let’s update
+our &lt;code class=&quot;highlighter-rouge&quot;&gt;config.ru&lt;/code&gt; file to load those additional views this way. The ugly way would
+be to simply update the &lt;code class=&quot;highlighter-rouge&quot;&gt;body&lt;/code&gt; method to declare thoses routes like this :&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;body&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;/&#39;&lt;/span&gt;    &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;read_erb_file&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Dir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;pwd&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;/views/layout.erb&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+    &lt;span class=&quot;s1&quot;&gt;&#39;/foo&#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;read_erb_file&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Dir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;pwd&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;/posts/foo.erb&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+    &lt;span class=&quot;s1&quot;&gt;&#39;/bar&#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;read_erb_file&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;Dir&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;pwd&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;/posts/bar.erb&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;run&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Rack&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;&lt;span class=&quot;no&quot;&gt;URLMap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;
+But we should do it dynamically. This way, adding an erb view would not neccessitate to update the code to
+build its route after its addition to the project.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;step-4-lets-create-a-layout-system&quot;&gt;Step 4: Let’s create a layout system!&lt;/h2&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;step-5-prevent-unexpected-behaviours&quot;&gt;Step 5: Prevent unexpected behaviours&lt;/h2&gt;
+
+&lt;p&gt;Our main issue is that all of our program routes are defined at its launch.&lt;/p&gt;
 </description>
         <pubDate>Tue, 01 Mar 2016 22:38:44 +0100</pubDate>
         <link>http://yinfei.github.io/dev/2016/03/01/rack-and-nothing-else.html</link>

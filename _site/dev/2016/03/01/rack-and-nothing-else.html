@@ -60,52 +60,195 @@
             <span class="post-reading-time"></span> read
           </div>
           <a name="topofpage"></a>
-          <p>The main objective of this blogpost will be to build a Ruby werbserver with Rack as the only gem of our Gemfile and see how far we can go in our app complexity.</p>
+          <p>The main objective of this blogpost will be to build a Ruby werbserver with Rack
+as the only gem of our Gemfile and see how far we can go in our app complexity.</p>
+<hr />
 
 <h2 id="the-setup">The setup</h2>
+<p><br />
+I strongly recommend having a Ruby Version manager installed, I personnaly use
+<a href="https://github.com/rbenv/rbenv" target="_blank">Rbenv</a>.</p>
 
-<p>First of all, we’ll need at the root of our project a <code class="highlighter-rouge">Gemfile</code> file with those few lines:
-```ruby
-source ‘https://rubygems.org’</p>
+<p>First of all, we’ll need at the root of our project a <code class="highlighter-rouge">Gemfile</code> file with those
+few lines:</p>
 
-<p>gem ‘rack’
-```</p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">source</span> <span class="s1">'https://rubygems.org'</span>
 
-<p>Keep in mind that a <code class="highlighter-rouge">.ruby-version</code> file would be really appreciated by your Ruby version manager too, just type in there: <code class="highlighter-rouge">2.2.3</code>, or any other Ruby version of your choice.</p>
+<span class="n">gem</span> <span class="s1">'rack'</span>
+</code></pre>
+</div>
+<p><br />
+Keep in mind that a <code class="highlighter-rouge">.ruby-version</code> file would be really appreciated by your
+Ruby version manager too, just type in there: <code class="highlighter-rouge">2.2.3</code>, or any other Ruby
+version of your choice.</p>
 
-<p>Now just run
-<code class="highlighter-rouge">shell
-$ bundle install
-</code></p>
+<p>Now just run the <code class="highlighter-rouge">bundle install</code> command in your terminal. Our project, at
+this step, should look like this:</p>
 
-<p>Our project, at this step:
-<code class="highlighter-rouge">
-/my_project
+<div class="highlighter-rouge"><pre class="highlight"><code>/my_project
  - .ruby_version
  - Gemfile
  - Gemfile.lock
-</code></p>
+</code></pre>
+</div>
+<hr />
 
 <h2 id="step-1-hello-world">Step 1: Hello world!</h2>
+<p><br />
+As <a href="http://rack.github.io/">Rack website</a> explains, at the root of our project,
+a <code class="highlighter-rouge">config.ru</code> file like this:</p>
 
-<p>As <a href="http://rack.github.io/">Rack website</a> explains, at the root of our project, a <code class="highlighter-rouge">config.ru</code> file like this:
-<code class="highlighter-rouge">ruby
-run Proc.new { |env| ['200', {'Content-Type' =&gt; 'text/html'}, ['Hello world!']] }
-</code></p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'rack'</span>
 
-<p>can run in a Rack server with a <code class="highlighter-rouge">bundle exec rackup config.ru</code> command in your terminal.  A quick check at <code class="highlighter-rouge">localhost:8080</code> in your browser will show you this :</p>
+<span class="n">run</span> <span class="no">Proc</span><span class="p">.</span><span class="nf">new</span> <span class="p">{</span> <span class="o">|</span><span class="n">env</span><span class="o">|</span> <span class="p">[</span><span class="s1">'200'</span><span class="p">,</span> <span class="p">{</span><span class="s1">'Content-Type'</span> <span class="o">=&gt;</span> <span class="s1">'text/html'</span><span class="p">},</span> <span class="p">[</span><span class="s1">'Hello world!'</span><span class="p">]]</span> <span class="p">}</span>
+</code></pre>
+</div>
+<p><br />
+can run in a Rack server with a <code class="highlighter-rouge">bundle exec rackup config.ru</code> command in your
+terminal.  A quick check at <code class="highlighter-rouge">localhost:9292</code> (9292 being rack default port) in
+your browser will show you this :</p>
 
-<p>&lt; screenshot &gt;</p>
+<p><img src="/assets/article_images/2016-03-01-rack-and-nothing-else/hello_world.png" alt="It works!" /></p>
 
-<p>It works !</p>
-
-<p>Now let’s see in details the content of the array our <code class="highlighter-rouge">Proc</code> instance gave to Rack:</p>
+<p>Now let’s see in details the content of the array our
+<a href="http://ruby-doc.org/core-2.2.3/Proc.html" target="_blank">Proc</a> instance gave
+to Rack:</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code><span class="p">[</span><span class="s1">'200'</span><span class="p">,</span> <span class="p">{</span><span class="s1">'Content-Type'</span> <span class="o">=&gt;</span> <span class="s1">'text/html'</span><span class="p">},</span> <span class="p">[</span><span class="s1">'Hello world!'</span><span class="p">]]</span>
 </code></pre>
 </div>
+<p><br />
+The first item is the HTTP code sent by our server, the second is the headers
+sent by the server for the response and the last is the body of the response
+itself: in this case plain text.</p>
 
-<p>The first item is the HTTP code sent by our server, the second are the headers sent for the response and the last is the body of the response.</p>
+<p>The next step will be to read an <code class="highlighter-rouge">.erb</code> file! Our project at this point:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>/my_project
+ - .ruby_version
+ - config.ru
+ - Gemfile
+ - Gemfile.lock
+</code></pre>
+</div>
+<hr />
+
+<h2 id="step-2-lets-read-some-erb-">Step 2: Let’s read some .erb !</h2>
+<p><br />
+While we’re working with ruby, it would be cool to load erb views. This way we
+could use ruby code in it!</p>
+
+<p>Let’s add a <code class="highlighter-rouge">layout.erb</code> view to our project in a <code class="highlighter-rouge">views</code>:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;p&gt;</span>It's <span class="cp">&lt;%=</span> <span class="no">Time</span><span class="p">.</span><span class="nf">now</span><span class="p">.</span><span class="nf">strftime</span><span class="p">(</span><span class="s1">'%H:%M'</span><span class="p">)</span> <span class="cp">%&gt;</span>!<span class="nt">&lt;/p&gt;</span>
+</code></pre>
+</div>
+
+<p><br />
+Since we’re lucky, the <code class="highlighter-rouge">ERB</code> class is
+<a href="http://ruby-doc.org/stdlib-2.2.3/libdoc/erb/rdoc/ERB.html" target="_blank">part of ruby Standard Lib</a>,
+so no need for another gem!</p>
+
+<p>Reading erb content isn’t that hard in fact. In ruby, reading a file can be written like this:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">file_path</span> <span class="o">=</span> <span class="no">Dir</span><span class="p">.</span><span class="nf">pwd</span> <span class="o">+</span> <span class="s1">'/views/layout.erb'</span>
+<span class="n">file_content</span> <span class="o">=</span> <span class="no">File</span><span class="p">.</span><span class="nf">read</span><span class="p">(</span><span class="no">File</span><span class="p">.</span><span class="nf">expand_path</span><span class="p">(</span><span class="n">file_path</span><span class="p">))</span>
+</code></pre>
+</div>
+<p><br />
+Render its erb content afterwards would just be something like this:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="no">ERB</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">file_content</span><span class="p">).</span><span class="nf">result</span><span class="p">(</span><span class="nb">binding</span><span class="p">)</span>
+</code></pre>
+</div>
+<p><br />
+In this case <code class="highlighter-rouge">binding</code> will be the result of the erb interpretation done by the <code class="highlighter-rouge">result</code> method call.</p>
+
+<p>Now let’s extract the body response in its own method and implement all of this in our <code class="highlighter-rouge">config.ru</code> :</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'rack'</span>
+<span class="nb">require</span> <span class="s1">'erb'</span>
+
+<span class="k">def</span> <span class="nf">read_erb_file</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+  <span class="n">file_content</span> <span class="o">=</span> <span class="no">File</span><span class="p">.</span><span class="nf">read</span><span class="p">(</span><span class="no">File</span><span class="p">.</span><span class="nf">expand_path</span><span class="p">(</span><span class="n">file_path</span><span class="p">))</span>
+
+  <span class="n">erb_load</span> <span class="o">=</span> <span class="no">ERB</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">file_content</span><span class="p">).</span><span class="nf">result</span><span class="p">(</span><span class="nb">binding</span><span class="p">)</span>
+
+  <span class="no">Proc</span><span class="p">.</span><span class="nf">new</span> <span class="p">{</span> <span class="o">|</span><span class="n">env</span><span class="o">|</span> <span class="p">[</span><span class="s1">'200'</span><span class="p">,</span> <span class="p">{</span><span class="s1">'Content-Type'</span> <span class="o">=&gt;</span> <span class="s1">'text/html'</span><span class="p">},</span> <span class="p">[</span><span class="n">erb_load</span><span class="p">]]</span> <span class="p">}</span>
+<span class="k">end</span>
+
+<span class="k">def</span> <span class="nf">body</span>
+  <span class="n">read_erb_file</span><span class="p">(</span><span class="no">Dir</span><span class="p">.</span><span class="nf">pwd</span> <span class="o">+</span> <span class="s1">'/views/layout.erb'</span><span class="p">)</span>
+<span class="k">end</span>
+
+<span class="n">run</span> <span class="n">body</span>
+</code></pre>
+</div>
+<p><br />
+A <code class="highlighter-rouge">bundle exec rackup config.ru</code> command and a look at <code class="highlighter-rouge">localhost:9292</code> will show you this :</p>
+
+<p><img src="/assets/article_images/2016-03-01-rack-and-nothing-else/erb_loaded.png" alt="We load ERB files!" /></p>
+
+<p>Our project at this point is getting bigger:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>/my_project
+  /views
+    - layout.erb
+ - .ruby_version
+ - config.ru
+ - Gemfile
+ - Gemfile.lock
+</code></pre>
+</div>
+<p><br />
+The next step will be to create few more views and dynamically serve them!</p>
+<hr />
+
+<h2 id="step-3-more-routes">Step 3: More routes</h2>
+<p><br />
+Let’s add more file to our project, we’ll make a directory named <code class="highlighter-rouge">posts</code>
+with two files in it, I’ll just put the files name in their content at this moment :</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>/my_project
+  /views
+    - layout.erb
+  /posts
+    - foo.rb
+    - bar.rb
+ - .ruby_version
+ - Gemfile
+ - Gemfile.lock
+</code></pre>
+</div>
+<p><br />
+First of all, if we’re to load multiple Procs, we’ll need the
+<a href="http://www.rubydoc.info/github/rack/rack/Rack/URLMap" target="_blank">Rack::URLMap</a>
+class. It would allow us to load a hash of routes linked to Procs. So, let’s update
+our <code class="highlighter-rouge">config.ru</code> file to load those additional views this way. The ugly way would
+be to simply update the <code class="highlighter-rouge">body</code> method to declare thoses routes like this :</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">body</span>
+  <span class="p">{</span> <span class="s1">'/'</span>    <span class="o">=&gt;</span> <span class="n">read_erb_file</span><span class="p">(</span><span class="no">Dir</span><span class="p">.</span><span class="nf">pwd</span> <span class="o">+</span> <span class="s1">'/views/layout.erb'</span><span class="p">),</span>
+    <span class="s1">'/foo'</span> <span class="o">=&gt;</span> <span class="n">read_erb_file</span><span class="p">(</span><span class="no">Dir</span><span class="p">.</span><span class="nf">pwd</span> <span class="o">+</span> <span class="s1">'/posts/foo.erb'</span><span class="p">),</span>
+    <span class="s1">'/bar'</span> <span class="o">=&gt;</span> <span class="n">read_erb_file</span><span class="p">(</span><span class="no">Dir</span><span class="p">.</span><span class="nf">pwd</span> <span class="o">+</span> <span class="s1">'/posts/bar.erb'</span><span class="p">)</span> <span class="p">}</span>
+<span class="k">end</span>
+
+<span class="n">run</span> <span class="no">Rack</span><span class="o">::</span><span class="no">URLMap</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">body</span><span class="p">)</span>
+</code></pre>
+</div>
+<p><br />
+But we should do it dynamically. This way, adding an erb view would not neccessitate to update the code to
+build its route after its addition to the project.</p>
+
+<hr />
+
+<h2 id="step-4-lets-create-a-layout-system">Step 4: Let’s create a layout system!</h2>
+
+<hr />
+
+<h2 id="step-5-prevent-unexpected-behaviours">Step 5: Prevent unexpected behaviours</h2>
+
+<p>Our main issue is that all of our program routes are defined at its launch.</p>
 
         </section>
         <footer class="post-footer">
