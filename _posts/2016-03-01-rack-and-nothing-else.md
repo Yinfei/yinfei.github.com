@@ -86,7 +86,7 @@ Step 2: Let's read some .erb !
 While we're working with ruby, it would be cool to load erb views. This way we
 could use ruby code in it!
 
-Let's add a `layout.erb` view to our project in a `views`:
+Let's add a `layout.erb` view to our project in a `views` folder:
 
 ```erb
 <p>It's <%= Time.now.strftime('%H:%M') %>!</p>
@@ -187,7 +187,7 @@ end
 run Rack::URLMap.new(routes)
 ```
 <br/>
-Seeing this should scream at you that we should do it dynamically. Doing so would not neccessitate
+Seeing this should scream at you that we should do it dynamically. Doing so would not necessitate
 to update the code to build its route after its addition to the project. Which would be a considerable
 waste of time.
 
@@ -222,7 +222,7 @@ run Rack::URLMap.new(routes)
 ```
 <br/>
 We added few constants in order to make it DRYish.
-As you can see, the only specific case here is the homepage which is spearated in its own method.
+As you can see, the only specific case here is the homepage which is separated in its own method.
 The rest of the routes will be mapped to an url matching their path in the `posts` folder, thanks to
 the `relative_file_path` method.
 
