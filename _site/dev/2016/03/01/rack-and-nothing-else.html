@@ -151,7 +151,7 @@ so no need for another gem!</p>
 
 <p>Reading erb content isn’t that hard in fact. In ruby, reading a file can be written like this:</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">file_path</span> <span class="o">=</span> <span class="no">Dir</span><span class="p">.</span><span class="nf">pwd</span> <span class="o">+</span> <span class="s1">'/views/layout.erb'</span>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">file_path</span> <span class="o">=</span> <span class="no">Dir</span><span class="p">.</span><span class="nf">pwd</span> <span class="o">+</span> <span class="s1">'/views/index.erb'</span>
 <span class="n">file_content</span> <span class="o">=</span> <span class="no">File</span><span class="p">.</span><span class="nf">read</span><span class="p">(</span><span class="no">File</span><span class="p">.</span><span class="nf">expand_path</span><span class="p">(</span><span class="n">file_path</span><span class="p">))</span>
 </code></pre>
 </div>
@@ -178,7 +178,7 @@ In this case <code class="highlighter-rouge">binding</code> will be the result o
 <span class="k">end</span>
 
 <span class="k">def</span> <span class="nf">body</span>
-  <span class="n">read_erb_file</span><span class="p">(</span><span class="no">Dir</span><span class="p">.</span><span class="nf">pwd</span> <span class="o">+</span> <span class="s1">'/views/layout.erb'</span><span class="p">)</span>
+  <span class="n">read_erb_file</span><span class="p">(</span><span class="no">Dir</span><span class="p">.</span><span class="nf">pwd</span> <span class="o">+</span> <span class="s1">'/views/index.erb'</span><span class="p">)</span>
 <span class="k">end</span>
 
 <span class="n">run</span> <span class="n">body</span>
@@ -193,7 +193,7 @@ A <code class="highlighter-rouge">bundle exec rackup config.ru</code> command an
 
 <div class="highlighter-rouge"><pre class="highlight"><code>/my_project
   /views
-    - layout.erb
+    - index.erb
  - .ruby_version
  - config.ru
  - Gemfile
@@ -206,16 +206,17 @@ The next step will be to create few more views and dynamically serve them!</p>
 
 <h2 id="step-3-more-routes">Step 3: More routes</h2>
 <p><br />
-Let’s add more file to our project, we’ll make a directory named <code class="highlighter-rouge">posts</code>
-with two files in it, I’ll just put the files name in their content at this moment :</p>
+Let’s add more views to our project, I’ll just put the files name in their content at this moment
+in a dedicated <code class="highlighter-rouge">posts</code> folder:</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>/my_project
   /views
-    - layout.erb
+    - index.erb
   /posts
-    - foo.rb
-    - bar.rb
+    - foo.erb
+    - bar.erb
  - .ruby_version
+ - config.ru
  - Gemfile
  - Gemfile.lock
 </code></pre>
@@ -227,28 +228,294 @@ class. It would allow us to load a hash of routes linked to Procs. So, let’s u
 our <code class="highlighter-rouge">config.ru</code> file to load those additional views this way. The ugly way would
 be to simply update the <code class="highlighter-rouge">body</code> method to declare thoses routes like this :</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">body</span>
-  <span class="p">{</span> <span class="s1">'/'</span>    <span class="o">=&gt;</span> <span class="n">read_erb_file</span><span class="p">(</span><span class="no">Dir</span><span class="p">.</span><span class="nf">pwd</span> <span class="o">+</span> <span class="s1">'/views/layout.erb'</span><span class="p">),</span>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">routes</span>
+  <span class="p">{</span> <span class="s1">'/'</span>    <span class="o">=&gt;</span> <span class="n">read_erb_file</span><span class="p">(</span><span class="no">Dir</span><span class="p">.</span><span class="nf">pwd</span> <span class="o">+</span> <span class="s1">'/views/index.erb'</span><span class="p">),</span>
     <span class="s1">'/foo'</span> <span class="o">=&gt;</span> <span class="n">read_erb_file</span><span class="p">(</span><span class="no">Dir</span><span class="p">.</span><span class="nf">pwd</span> <span class="o">+</span> <span class="s1">'/posts/foo.erb'</span><span class="p">),</span>
     <span class="s1">'/bar'</span> <span class="o">=&gt;</span> <span class="n">read_erb_file</span><span class="p">(</span><span class="no">Dir</span><span class="p">.</span><span class="nf">pwd</span> <span class="o">+</span> <span class="s1">'/posts/bar.erb'</span><span class="p">)</span> <span class="p">}</span>
 <span class="k">end</span>
 
-<span class="n">run</span> <span class="no">Rack</span><span class="o">::</span><span class="no">URLMap</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">body</span><span class="p">)</span>
+<span class="n">run</span> <span class="no">Rack</span><span class="o">::</span><span class="no">URLMap</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">routes</span><span class="p">)</span>
 </code></pre>
 </div>
 <p><br />
-But we should do it dynamically. This way, adding an erb view would not neccessitate to update the code to
-build its route after its addition to the project.</p>
+Seeing this should scream at you that we should do it dynamically. Doing so would not neccessitate
+to update the code to build its route after its addition to the project. Which would be a considerable
+waste of time.</p>
 
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="no">ROOT</span> <span class="o">||=</span> <span class="no">Dir</span><span class="p">.</span><span class="nf">pwd</span>
+<span class="no">ERB_FILES</span> <span class="o">||=</span> <span class="no">Dir</span><span class="p">[</span><span class="no">ROOT</span> <span class="o">+</span> <span class="s1">'/posts/**/*.erb'</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">read_erb_file</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+  <span class="n">file_content</span> <span class="o">=</span> <span class="no">File</span><span class="p">.</span><span class="nf">read</span><span class="p">(</span><span class="no">File</span><span class="p">.</span><span class="nf">expand_path</span><span class="p">(</span><span class="n">file_path</span><span class="p">))</span>
+
+  <span class="n">erb_load</span> <span class="o">=</span> <span class="no">ERB</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">file_content</span><span class="p">).</span><span class="nf">result</span><span class="p">(</span><span class="nb">binding</span><span class="p">)</span>
+
+  <span class="no">Proc</span><span class="p">.</span><span class="nf">new</span> <span class="p">{</span> <span class="o">|</span><span class="n">env</span><span class="o">|</span> <span class="p">[</span><span class="s1">'200'</span><span class="p">,</span> <span class="p">{</span><span class="s1">'Content-Type'</span> <span class="o">=&gt;</span> <span class="s1">'text/html'</span><span class="p">},</span> <span class="p">[</span><span class="n">erb_load</span><span class="p">]]</span> <span class="p">}</span>
+<span class="k">end</span>
+
+<span class="k">def</span> <span class="nf">home</span>
+  <span class="p">{</span> <span class="s1">'/'</span> <span class="o">=&gt;</span> <span class="n">read_erb_file</span><span class="p">(</span><span class="no">ROOT</span> <span class="o">+</span> <span class="s1">'/views/index.erb'</span><span class="p">)</span> <span class="p">}</span>
+<span class="k">end</span>
+
+<span class="k">def</span> <span class="nf">relative_file_path</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+  <span class="s2">"/</span><span class="si">#{</span><span class="n">file</span><span class="p">.</span><span class="nf">match</span><span class="p">(</span><span class="sr">/posts\/(.*).erb/</span><span class="p">).</span><span class="nf">captures</span><span class="p">.</span><span class="nf">first</span><span class="si">}</span><span class="s2">"</span>
+<span class="k">end</span>
+
+<span class="k">def</span> <span class="nf">routes</span>
+  <span class="no">ERB_FILES</span><span class="p">.</span><span class="nf">each_with_object</span><span class="p">(</span><span class="n">home</span><span class="p">)</span> <span class="k">do</span> <span class="o">|</span><span class="n">file</span><span class="p">,</span> <span class="n">response</span><span class="o">|</span>
+    <span class="n">response</span><span class="p">.</span><span class="nf">merge!</span><span class="p">({</span> <span class="n">relative_file_path</span><span class="p">(</span><span class="n">file</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="n">read_erb_file</span><span class="p">(</span><span class="n">file</span><span class="p">)</span> <span class="p">})</span>
+    <span class="n">response</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="n">run</span> <span class="no">Rack</span><span class="o">::</span><span class="no">URLMap</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">routes</span><span class="p">)</span>
+</code></pre>
+</div>
+<p><br />
+We added few constants in order to make it DRYish.
+As you can see, the only specific case here is the homepage which is spearated in its own method.
+The rest of the routes will be mapped to an url matching their path in the <code class="highlighter-rouge">posts</code> folder, thanks to
+the <code class="highlighter-rouge">relative_file_path</code> method.</p>
+
+<p>This way, we have our homepage on <code class="highlighter-rouge">localhost:9292</code>, and the two other views are accessible at <code class="highlighter-rouge">/foo</code>
+and <code class="highlighter-rouge">/bar</code>! But you may wonder why I kept the homepage separated. The next step will make more sense
+since we’re going to build a layout system!</p>
 <hr />
 
 <h2 id="step-4-lets-create-a-layout-system">Step 4: Let’s create a layout system!</h2>
+<p><br />
+First things first, let’s add a <code class="highlighter-rouge">layout</code> file in our views:</p>
 
+<div class="highlighter-rouge"><pre class="highlight"><code>/my_project
+  /views
+    - layout.erb
+    - index.erb
+  /posts
+    - foo.erb
+    - bar.erb
+ - .ruby_version
+ - config.ru
+ - Gemfile
+ - Gemfile.lock
+</code></pre>
+</div>
+<p><br />
+Now things are getting serious since, as you may have already found, a layout system would basically
+rely on the fact that we’re going to insert the content of an erb file… in another erb file. It may
+sound complicated but it can be summed up quite simply.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="no">LAYOUT</span> <span class="o">||=</span> <span class="no">ROOT</span> <span class="o">+</span> <span class="s1">'/views/layout.erb'</span>
+
+<span class="k">def</span> <span class="nf">erb</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+  <span class="n">params</span> <span class="o">=</span> <span class="n">render_partial</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+
+  <span class="no">ERB</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="no">File</span><span class="p">.</span><span class="nf">read</span><span class="p">(</span><span class="no">LAYOUT</span><span class="p">)).</span><span class="nf">result</span><span class="p">(</span><span class="n">params</span><span class="p">.</span><span class="nf">instance_eval</span> <span class="p">{</span> <span class="nb">binding</span> <span class="p">})</span>
+<span class="k">end</span>
+
+<span class="k">def</span> <span class="nf">render_partial</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+  <span class="k">return</span> <span class="no">OpenStruct</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="ss">content: </span><span class="kp">nil</span><span class="p">)</span> <span class="k">if</span> <span class="n">file</span><span class="p">.</span><span class="nf">nil?</span>
+
+  <span class="n">path</span> <span class="o">=</span> <span class="no">File</span><span class="p">.</span><span class="nf">expand_path</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+
+  <span class="no">OpenStruct</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="ss">content: </span><span class="no">ERB</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="no">File</span><span class="p">.</span><span class="nf">read</span><span class="p">(</span><span class="n">path</span><span class="p">)).</span><span class="nf">result</span><span class="p">(</span><span class="nb">binding</span><span class="p">))</span>
+<span class="k">end</span>
+
+<span class="k">def</span> <span class="nf">load_erb</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+  <span class="n">render</span> <span class="o">=</span> <span class="n">erb</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+
+  <span class="no">Proc</span><span class="p">.</span><span class="nf">new</span> <span class="p">{</span> <span class="o">|</span><span class="n">env</span><span class="o">|</span> <span class="p">[</span><span class="s1">'200'</span><span class="p">,</span> <span class="p">{</span><span class="s1">'Content-Type'</span> <span class="o">=&gt;</span> <span class="s1">'text/html'</span><span class="p">},</span> <span class="p">[</span><span class="n">render</span><span class="p">]]</span> <span class="p">}</span>
+<span class="k">end</span>
+</code></pre>
+</div>
+<p><br />
+For this case, we have to split the rendering logic. The <code class="highlighter-rouge">render_partial</code> method has been updated, it will
+be in charge of loading the post content file and its <code class="highlighter-rouge">.erb</code> content. We eventually add a guard condition
+in its first line in case of a user calling a post that does not exist, preventing a crash of the application.</p>
+
+<p>The <code class="highlighter-rouge">erb</code> method is really interesting, it’ll handle the merge of the two ERBs.
+First things first, as you can see in its last line, it’ll load the layout file. Then, in this content, we
+embed an <code class="highlighter-rouge">instance_eval</code> of the partial rendering and return the whole result as a <code class="highlighter-rouge">binding</code>, same as before.
+This time the <code class="highlighter-rouge">instance_eval</code> contains an <code class="highlighter-rouge">OpenStruct</code> with a key named <code class="highlighter-rouge">content</code>, this key has the whole
+partial content.</p>
+
+<p>A view of the <code class="highlighter-rouge">layout.erb</code> file may make this clearer as how you’ll load this content in your layout:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+    <span class="nt">&lt;head&gt;&lt;head&gt;</span>
+    <span class="nt">&lt;body&gt;</span>
+        <span class="nt">&lt;h1&gt;</span>This is the layout.<span class="nt">&lt;/h1&gt;</span>
+        <span class="err">&lt;</span>%= content %&gt;
+    <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre>
+</div>
+<p><br />
+As I’ve said before, even if it sounds complicated, keep in mind that it’s just embedding an <code class="highlighter-rouge">erb</code> rendering
+into another. You can now load any post file in your layout and add new posts on the fly with no sweat!</p>
+
+<p>The next step will be dedicated to strenghten our application by preventing unexpected behaviours.</p>
 <hr />
 
-<h2 id="step-5-prevent-unexpected-behaviours">Step 5: Prevent unexpected behaviours</h2>
+<h2 id="step-5-prevent-unexpected-behaviours-and-massive-cleanup">Step 5: Prevent unexpected behaviours and massive cleanup!</h2>
+<p><br />
+Our main issue is that all of our program routes are defined at its launch. Meaning that, with our actual code,
+you can’t really redirect a user to a “404 not found” page if this user tries to load an unexisting post. At
+this point, you’ll only load an empty layout unfortunately: the content of the partial loading being <code class="highlighter-rouge">nil</code>.</p>
 
-<p>Our main issue is that all of our program routes are defined at its launch.</p>
+<p>Another issue is that if you check you app logs, you’ll see that your browser requests your favicon to display it
+and it raises a 404 too.</p>
+
+<p>So, how can we make this routes system more dynamic and more intelligent? How can we send images files like a favicon?
+First of all, let’s create a new view called <code class="highlighter-rouge">404.erb</code> in our <code class="highlighter-rouge">views</code> folder and a <code class="highlighter-rouge">favicon.ico</code> file of your choice
+at the root of the project.</p>
+
+<p>Since it’ll be a massive rework, let’s move our code to a proper <code class="highlighter-rouge">app.rb</code> file and update the <code class="highlighter-rouge">config.ru</code>. We’ll add
+some namespacing too! (From now on, I’ll name my app <code class="highlighter-rouge">Garnet</code>)</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>/garnet
+  /views
+    - layout.erb
+    - index.erb
+    - 404.erb
+  /posts
+    - foo.erb
+    - bar.erb
+ - .ruby_version
+ - app.rb
+ - config.ru
+ - favicon.ico
+ - Gemfile
+ - Gemfile.lock
+</code></pre>
+</div>
+<p><br />
+The <code class="highlighter-rouge">app.rb</code> has been reworked a lot:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'rack'</span>
+<span class="nb">require</span> <span class="s1">'erb'</span>
+<span class="nb">require</span> <span class="s1">'ostruct'</span>
+
+<span class="k">module</span> <span class="nn">Garnet</span>
+  <span class="k">class</span> <span class="nc">Application</span>
+
+    <span class="nc">ROOT</span> <span class="o">||=</span> <span class="no">File</span><span class="p">.</span><span class="nf">expand_path</span><span class="p">(</span><span class="no">Dir</span><span class="p">.</span><span class="nf">pwd</span><span class="p">)</span>
+
+    <span class="no">SYSTEM_FILES</span> <span class="o">||=</span> <span class="p">{</span> <span class="s1">'layout'</span>    <span class="o">=&gt;</span> <span class="no">ROOT</span> <span class="o">+</span> <span class="s1">'/views/layout.erb'</span><span class="p">,</span>
+                       <span class="s1">'favicon'</span>   <span class="o">=&gt;</span> <span class="no">ROOT</span> <span class="o">+</span> <span class="s1">'/favicon.ico'</span><span class="p">,</span>
+                       <span class="s1">'homepage'</span>  <span class="o">=&gt;</span> <span class="no">ROOT</span> <span class="o">+</span> <span class="s1">'/views/index.erb'</span><span class="p">,</span>
+                       <span class="s1">'not_found'</span> <span class="o">=&gt;</span> <span class="no">ROOT</span> <span class="o">+</span> <span class="s1">'/views/404.erb'</span> <span class="p">}</span>
+
+    <span class="no">HEADERS</span> <span class="o">||=</span> <span class="p">{</span> <span class="s1">'html'</span> <span class="o">=&gt;</span> <span class="p">{</span><span class="s1">'Content-Type'</span> <span class="o">=&gt;</span> <span class="s1">'text/html'</span> <span class="p">},</span>
+                  <span class="s1">'favicon'</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="s1">'Content-Type'</span> <span class="o">=&gt;</span> <span class="s1">'image/x-icon'</span><span class="p">,</span>
+                                 <span class="s1">'Content-Length'</span> <span class="o">=&gt;</span> <span class="no">File</span><span class="p">.</span><span class="nf">read</span><span class="p">(</span><span class="no">SYSTEM_FILES</span><span class="p">[</span><span class="s1">'favicon'</span><span class="p">]).</span><span class="nf">bytesize</span><span class="p">.</span><span class="nf">to_s</span> <span class="p">}</span> <span class="p">}</span>
+
+    <span class="k">def</span> <span class="nf">erb</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+      <span class="n">params</span> <span class="o">=</span> <span class="n">build_partial</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+      <span class="n">layout</span> <span class="o">=</span> <span class="no">File</span><span class="p">.</span><span class="nf">read</span><span class="p">(</span><span class="no">SYSTEM_FILES</span><span class="p">[</span><span class="s1">'layout'</span><span class="p">])</span>
+
+      <span class="no">ERB</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">layout</span><span class="p">).</span><span class="nf">result</span><span class="p">(</span><span class="n">params</span><span class="p">.</span><span class="nf">instance_eval</span> <span class="p">{</span> <span class="nb">binding</span> <span class="p">})</span>
+    <span class="k">end</span>
+
+    <span class="k">def</span> <span class="nf">build_partial</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+      <span class="n">content</span> <span class="o">=</span> <span class="no">ERB</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="no">File</span><span class="p">.</span><span class="nf">read</span><span class="p">(</span><span class="no">File</span><span class="p">.</span><span class="nf">expand_path</span><span class="p">(</span><span class="n">file</span><span class="p">))).</span><span class="nf">result</span><span class="p">(</span><span class="nb">binding</span><span class="p">)</span>
+
+      <span class="no">OpenStruct</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="ss">content: </span><span class="n">content</span><span class="p">)</span>
+    <span class="k">end</span>
+
+    <span class="k">def</span> <span class="nf">render_view</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span>
+      <span class="n">file</span> <span class="o">=</span> <span class="s2">"</span><span class="si">#{</span><span class="no">ROOT</span><span class="si">}</span><span class="s2">/posts/</span><span class="si">#{</span><span class="n">file_name</span><span class="si">}</span><span class="s2">.erb"</span>
+
+      <span class="k">return</span> <span class="n">not_found</span> <span class="k">unless</span> <span class="no">File</span><span class="p">.</span><span class="nf">exist?</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+
+      <span class="p">[</span><span class="s1">'200'</span><span class="p">,</span> <span class="no">HEADERS</span><span class="p">[</span><span class="s1">'html'</span><span class="p">],</span> <span class="p">[</span><span class="n">erb</span><span class="p">(</span><span class="n">file</span><span class="p">)]]</span>
+    <span class="k">end</span>
+
+    <span class="k">def</span> <span class="nf">favicon</span>
+      <span class="p">[</span><span class="s1">'200'</span><span class="p">,</span> <span class="no">HEADERS</span><span class="p">[</span><span class="s1">'favicon'</span><span class="p">],</span> <span class="p">[</span><span class="no">File</span><span class="p">.</span><span class="nf">read</span><span class="p">(</span><span class="no">SYSTEM_FILES</span><span class="p">[</span><span class="s1">'favicon'</span><span class="p">])]]</span>
+    <span class="k">end</span>
+
+    <span class="k">def</span> <span class="nf">homepage</span>
+      <span class="p">[</span><span class="s1">'200'</span><span class="p">,</span> <span class="no">HEADERS</span><span class="p">[</span><span class="s1">'html'</span><span class="p">],</span> <span class="p">[</span><span class="n">erb</span><span class="p">(</span><span class="no">SYSTEM_FILES</span><span class="p">[</span><span class="s1">'homepage'</span><span class="p">])]]</span>
+    <span class="k">end</span>
+
+    <span class="k">def</span> <span class="nf">not_found</span>
+      <span class="p">[</span><span class="s1">'404'</span><span class="p">,</span> <span class="no">HEADERS</span><span class="p">[</span><span class="s1">'html'</span><span class="p">],</span> <span class="p">[</span><span class="n">erb</span><span class="p">(</span><span class="no">SYSTEM_FILES</span><span class="p">[</span><span class="s1">'not_found'</span><span class="p">])]]</span>
+    <span class="k">end</span>
+
+    <span class="k">def</span> <span class="nf">call</span><span class="p">(</span><span class="n">env</span><span class="p">)</span>
+      <span class="n">endpoint_called</span> <span class="o">=</span> <span class="no">Rack</span><span class="o">::</span><span class="no">Request</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">env</span><span class="p">).</span><span class="nf">path</span>
+
+      <span class="k">return</span> <span class="n">favicon</span>  <span class="k">if</span> <span class="n">endpoint_called</span> <span class="o">==</span> <span class="s1">'/favicon.ico'</span>
+      <span class="k">return</span> <span class="n">homepage</span> <span class="k">if</span> <span class="n">endpoint_called</span> <span class="o">==</span> <span class="s1">'/'</span>
+
+      <span class="n">render_view</span><span class="p">(</span><span class="n">endpoint_called</span><span class="p">)</span>
+    <span class="k">end</span>
+  <span class="k">end</span>
+<span class="k">end</span>
+</code></pre>
+</div>
+<p><br />
+The real focus here is on the <code class="highlighter-rouge">call</code> method, It’ll get each path request and act
+as a proper router. There’s two guard conditions: the first is related to the favicon
+that’ll be requested at each call. Doing so allow us to send it as fast as possble in
+the whole app process. The second is related to the homepage that can’t match our
+dynamic route building unfortunately.</p>
+
+<p>Since <code class="highlighter-rouge">call</code> is in fact a method call by <code class="highlighter-rouge">Rack::Handler::WEBrick</code> triggered automatically
+which renders views for us, we’ll cheat a little an use its magic by simply implementing it.
+This way we still rely only on <code class="highlighter-rouge">Rack</code> while doing fancy things.</p>
+
+<p>The rest of the rework, as you can see, is just a cleanup in order to keep our project
+as DRYish as possible.</p>
+
+<p><code class="highlighter-rouge">config.ru</code> now calls a new instance of Garnet, as expected, binded on the port 3000 now
+(which is a personal preference and not really neccessary).</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nb">require</span> <span class="s1">'./app'</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="no">Garnet</span><span class="o">::</span><span class="no">Application</span><span class="p">.</span><span class="nf">new</span>
+
+<span class="no">Rack</span><span class="o">::</span><span class="no">Handler</span><span class="o">::</span><span class="no">WEBrick</span><span class="p">.</span><span class="nf">run</span><span class="p">(</span><span class="n">app</span><span class="p">,</span> <span class="no">Port</span><span class="p">:</span> <span class="mi">3000</span><span class="p">)</span>
+</code></pre>
+</div>
+<hr />
+
+<h2 id="last-step-add-some-css">Last step: Add some CSS!</h2>
+<p><br />
+One last thing: loading asset files! Since dealing with blank views is not quite appealing, let’s
+add some style and update our code base to load asset files from a, <code class="highlighter-rouge">asset</code> folder at the root of
+our app.</p>
+
+<p>Just update <code class="highlighter-rouge">app.rb</code> to match this, it’s as simple as it sounds:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="k">def</span> <span class="nf">asset_file</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
+  <span class="n">file</span> <span class="o">=</span> <span class="p">[</span><span class="no">ROOT</span><span class="p">,</span> <span class="nb">name</span><span class="p">].</span><span class="nf">join</span>
+
+  <span class="k">return</span> <span class="n">not_found</span> <span class="k">unless</span> <span class="no">File</span><span class="p">.</span><span class="nf">exist?</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+
+  <span class="p">[</span><span class="s1">'200'</span><span class="p">,</span> <span class="no">HEADERS</span><span class="p">[</span><span class="s1">'html'</span><span class="p">],</span> <span class="p">[</span><span class="no">File</span><span class="p">.</span><span class="nf">read</span><span class="p">(</span><span class="n">file</span><span class="p">)]]</span>
+<span class="k">end</span>
+
+<span class="k">def</span> <span class="nf">call</span><span class="p">(</span><span class="n">env</span><span class="p">)</span>
+  <span class="n">endpoint_called</span> <span class="o">=</span> <span class="no">Rack</span><span class="o">::</span><span class="no">Request</span><span class="p">.</span><span class="nf">new</span><span class="p">(</span><span class="n">env</span><span class="p">).</span><span class="nf">path</span>
+
+  <span class="k">return</span> <span class="n">favicon</span> <span class="k">if</span> <span class="n">endpoint_called</span> <span class="o">==</span> <span class="s1">'/favicon.ico'</span>
+  <span class="k">return</span> <span class="n">homepage</span> <span class="k">if</span> <span class="n">endpoint_called</span> <span class="o">==</span> <span class="s1">'/'</span>
+  <span class="k">return</span> <span class="n">asset_file</span><span class="p">(</span><span class="n">endpoint_called</span><span class="p">)</span> <span class="k">if</span> <span class="n">endpoint_called</span> <span class="o">=~</span> <span class="sr">/\/assets/</span>
+
+  <span class="n">render_view</span><span class="p">(</span><span class="n">endpoint_called</span><span class="p">)</span>
+<span class="k">end</span>
+</code></pre>
+</div>
+<p><br />
+This way, any relative link to a stylesheet can work properly and return all the css you need!
+<br /></p>
+<hr />
+
+<p>There you go! You can now have a little blog working with only one gem in your Gemfile, as promised!
+I hope you found this as interesting as it was funny to do for me and if you want to contribute you
+can find the source code on <a href="https://github.com/Yinfei/garnet" target="_blank">GitHub</a>.
+Thank you for reading, I hope you learnt some things!</p>
 
         </section>
         <footer class="post-footer">
